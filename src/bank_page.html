@@ -1,0 +1,378 @@
+{% extends 'layout.html' %}
+{% set title = "Банк" %}
+{% import "promo.html" as promo %}
+{% import "bonuses.html" as bonuses %}
+{% import "form.html" as form %}
+
+
+{% block page %}
+
+
+<main class="bank-page">
+
+	<section class="bank-page__bank-info bank-info">
+		<div class="bank-info__container">
+
+			<div class="bank-info__logo-block">
+				<div class="bank-info__image">
+					<img src="@img/logo_alfa_s.svg" alt="">
+				</div>
+				<div class="bank-info__title">
+					<h1 class="h1">Альфа банк</h1>
+				</div>
+			</div>
+
+			<div class="bank-info__content content-bank-info">
+				<ul class="content-bank-info__list">
+					<li class="content-bank-info__item">
+						<div class="content-bank-info__title">
+							<h5 class="h5">О банке</h5>
+						</div>
+						<div data-showmore="items" class="content-bank-info__text-block text-block-content-bank-info">
+							<div data-showmore-content="1" class="text-block-content-bank-info__text">
+								<p>АО «Альфа-Банк» — один из крупнейших универсальных банков России, принадлежащий
+									консорциуму «Альфа-Групп». Позиции «Альфы» сильны практически во всех сегментах
+									банковского рынка. Достаточно хорошо развита сеть подразделений в Москве и других
+									крупных
+									городах России.</p>
+								<p>АО «Альфа-Банк» — один из крупнейших универсальных банков России, принадлежащий
+									консорциуму «Альфа-Групп». Позиции «Альфы» сильны практически во всех сегментах
+									банковского рынка. Достаточно хорошо развита сеть подразделений в Москве и других
+									крупных
+									городах России.</p>
+								<p>АО «Альфа-Банк» — один из крупнейших универсальных банков России, принадлежащий
+									консорциуму «Альфа-Групп». Позиции «Альфы» сильны практически во всех сегментах
+									банковского рынка. Достаточно хорошо развита сеть подразделений в Москве и других
+									крупных
+									городах России.</p>
+							</div>
+
+							<button hidden data-showmore-button type="button"
+								class="text-block-content-bank-info__show-more-button simple-link">
+								<span>Показать еще</span>
+								<span>Скрыть</span>
+							</button>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="bank-page__tariff-cards tariff-cards">
+		<div class="tariff-cards__container">
+			<div class="tariff-cards__title">
+				<h2 class="h2">Выберите свой тариф в <span>Альфа-банке</span></h2>
+			</div>
+
+			<div class="tariff-cards__body splide">
+				<div class="splide__track">
+					<ul class="splide__list">
+
+						<li class="tariff-cards__slide splide__slide">
+							<div class="tariff-cards__card card-tariff">
+								<div class="card-tariff__title-block">
+									<h3 class="card-tariff__title">
+										<a href="" class="card-tariff__link">Просто 1%</a>
+									</h3>
+									<div class="card-tariff__description">Для нового и небольшого бизнеса</div>
+								</div>
+
+								<ul class="card-tariff__list">
+									<li class="card-tariff__item">
+										<div class="card-tariff__cost">800 ₽ в месяц</div>
+										<div class="card-tariff__label">Обслуживание счета</div>
+									</li>
+
+									<li class="card-tariff__item">
+										<div class="card-tariff__cost">0 ₽ в месяц</div>
+										<div class="card-tariff__label">платежи партнёрам в другие банки</div>
+									</li>
+
+									<li class="card-tariff__item">
+										<div class="card-tariff__cost">0 ₽ в месяц</div>
+										<div class="card-tariff__label">обслуживание карты Альфа-Бизнес</div>
+									</li>
+								</ul>
+
+								<a href="" class="card-tariff__button btn btn_m">Открыть счет</a>
+
+							</div>
+						</li>
+						<li class="tariff-cards__slide splide__slide">
+							<div class="tariff-cards__card card-tariff">
+								<div class="card-tariff__title-block">
+									<h3 class="card-tariff__title">
+										<a href="" class="card-tariff__link">Просто 1%</a>
+									</h3>
+									<div class="card-tariff__description">Для нового и небольшого бизнеса</div>
+								</div>
+
+								<ul class="card-tariff__list">
+									<li class="card-tariff__item">
+										<div class="card-tariff__cost">800 ₽ в месяц</div>
+										<div class="card-tariff__label">Обслуживание счета</div>
+									</li>
+
+									<li class="card-tariff__item">
+										<div class="card-tariff__cost">0 ₽ в месяц</div>
+										<div class="card-tariff__label">платежи партнёрам в другие банки</div>
+									</li>
+
+									<li class="card-tariff__item">
+										<div class="card-tariff__cost">0 ₽ в месяц</div>
+										<div class="card-tariff__label">обслуживание карты Альфа-Бизнес</div>
+									</li>
+								</ul>
+
+								<a href="" class="card-tariff__button btn btn_m">Открыть счет</a>
+
+							</div>
+						</li>
+						<li class="tariff-cards__slide splide__slide">
+							<div class="tariff-cards__card card-tariff">
+								<div class="card-tariff__title-block">
+									<h3 class="card-tariff__title">
+										<a href="" class="card-tariff__link">Просто 1%</a>
+									</h3>
+									<div class="card-tariff__description">Для нового и небольшого бизнеса</div>
+								</div>
+
+								<ul class="card-tariff__list">
+									<li class="card-tariff__item">
+										<div class="card-tariff__cost">800 ₽ в месяц</div>
+										<div class="card-tariff__label">Обслуживание счета</div>
+									</li>
+
+									<li class="card-tariff__item">
+										<div class="card-tariff__cost">0 ₽ в месяц</div>
+										<div class="card-tariff__label">платежи партнёрам в другие банки</div>
+									</li>
+
+									<li class="card-tariff__item">
+										<div class="card-tariff__cost">0 ₽ в месяц</div>
+										<div class="card-tariff__label">обслуживание карты Альфа-Бизнес</div>
+									</li>
+								</ul>
+
+								<a href="" class="card-tariff__button btn btn_m">Открыть счет</a>
+
+							</div>
+						</li>
+
+
+					</ul>
+				</div>
+			</div>
+
+			<div class="tariff-cards__background"></div>
+
+
+		</div>
+	</section>
+
+	{{ promo.promo('bank-page__calculator-promo') }}
+
+	<section class="bank-page__advantages-cards bank-advantages-cards">
+		<div class="bank-advantages-cards__container">
+			<div class="bank-advantages-cards__title">
+				<h2 class="h2">Ваши преимущества со счётом в Альфа-Банке</h2>
+			</div>
+
+			<div class="bank-advantages-cards__body splide">
+				<div class="splide__track">
+					<ul class="splide__list">
+
+						<li class="bank-advantages-cards__slide splide__slide">
+							<div class="bank-advantages-card">
+								<div class="bank-advantages-card__header">
+									<div class="bank-advantages-card__title">
+										<h3 class="h3">Бесплатный мобильный
+											и интернет-банк</h3>
+									</div>
+									<div class="bank-advantages-card__image">
+										<img src="@img/pc.svg" alt="">
+									</div>
+								</div>
+								<div class="bank-advantages-card__text">
+									Управляйте счетами с любого устройства —
+									следите за остатками и движением средств, переводите и получайте деньги,
+									проверяйте надёжность контрагентов.
+								</div>
+							</div>
+						</li>
+
+						<li class="bank-advantages-cards__slide splide__slide">
+							<div class="bank-advantages-card">
+								<div class="bank-advantages-card__header">
+									<div class="bank-advantages-card__title">
+										<h3 class="h3">Бесплатный мобильный
+											и интернет-банк</h3>
+									</div>
+									<div class="bank-advantages-card__image">
+										<img src="@img/pc.svg" alt="">
+									</div>
+								</div>
+								<div class="bank-advantages-card__text">
+									Управляйте счетами с любого устройства —
+									следите за остатками и движением средств, переводите и получайте деньги,
+									проверяйте надёжность контрагентов.
+								</div>
+							</div>
+						</li>
+
+						<li class="bank-advantages-cards__slide splide__slide">
+							<div class="bank-advantages-card">
+								<div class="bank-advantages-card__header">
+									<div class="bank-advantages-card__title">
+										<h3 class="h3">Бесплатный мобильный
+											и интернет-банк</h3>
+									</div>
+									<div class="bank-advantages-card__image">
+										<img src="@img/pc.svg" alt="">
+									</div>
+								</div>
+								<div class="bank-advantages-card__text">
+									Управляйте счетами с любого устройства —
+									следите за остатками и движением средств, переводите и получайте деньги,
+									проверяйте надёжность контрагентов.
+								</div>
+							</div>
+						</li>
+
+						<li class="bank-advantages-cards__slide splide__slide">
+							<div class="bank-advantages-card">
+								<div class="bank-advantages-card__header">
+									<div class="bank-advantages-card__title">
+										<h3 class="h3">Бесплатный мобильный
+											и интернет-банк</h3>
+									</div>
+									<div class="bank-advantages-card__image">
+										<img src="@img/pc.svg" alt="">
+									</div>
+								</div>
+								<div class="bank-advantages-card__text">
+									Управляйте счетами с любого устройства —
+									следите за остатками и движением средств, переводите и получайте деньги,
+									проверяйте надёжность контрагентов.
+								</div>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+
+
+
+		</div>
+	</section>
+
+	<section class="bank-page__tariffs-table bank-tariffs-table">
+		<div class="bank-tariffs-table__container">
+			<div class="bank-tariffs-table__title">
+				<h2 class="h2">Тарифы</h2>
+			</div>
+
+			<div class="bank-tariffs-table__table-block bank-tariffs-table-block">
+
+
+				<ul class="bank-tariffs-table-block__list bank-tariffs-table-block__list_descriptions">
+					<li class="bank-tariffs-table-block__item"></li>
+					<li class="bank-tariffs-table-block__item">
+						Открытие счета
+					</li>
+					<li class="bank-tariffs-table-block__item">
+						Подключение системы «Банк-клиент»
+					</li>
+					<li class="bank-tariffs-table-block__item">
+						Стоимость платежных поручений
+					</li>
+					<li class="bank-tariffs-table-block__item">
+						SMS уведомления
+					</li>
+					<li class="bank-tariffs-table-block__item">
+						Ежемесячное обслуживание
+					</li>
+				</ul>
+
+				<div class="bank-tariffs-table-block__slider splide">
+					<div class="splide__track">
+						<ul class="splide__list">
+
+							<li class="splide__slide">
+								<ul class="bank-tariffs-table-block__list">
+									<li class="bank-tariffs-table-block__item">Просто 1%</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">Бесплатно</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+								</ul>
+							</li>
+							<li class="splide__slide">
+								<ul class="bank-tariffs-table-block__list">
+									<li class="bank-tariffs-table-block__item">Просто 1%</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">Бесплатно</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+								</ul>
+							</li>
+							<li class="splide__slide">
+								<ul class="bank-tariffs-table-block__list">
+									<li class="bank-tariffs-table-block__item">Просто 1%</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">с 1-ого по 3-й платеж
+										– Бесплатно;
+										с 4-ого – 50₽;</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+								</ul>
+							</li>
+							<li class="splide__slide">
+								<ul class="bank-tariffs-table-block__list">
+									<li class="bank-tariffs-table-block__item">Просто 1%</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">Бесплатно</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+								</ul>
+							</li>
+							<li class="splide__slide">
+								<ul class="bank-tariffs-table-block__list">
+									<li class="bank-tariffs-table-block__item">Просто 1%</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">Бесплатно</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+									<li class="bank-tariffs-table-block__item">0₽</li>
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+
+
+			</div>
+
+
+
+		</div>
+	</section>
+
+	{{ bonuses.bonuses('bank-page__bonuses') }}
+
+	{{ form.form('bank-page__registration-form') }}
+
+</main>
+
+
+
+{% endblock %}

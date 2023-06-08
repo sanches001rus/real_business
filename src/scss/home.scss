@@ -1,0 +1,523 @@
+.page {
+	&__stages {
+		@include adaptiveValue("margin-top", 100, 100);
+	}
+	&__registration-form {
+		@include adaptiveValue("margin-top", 200, 90);
+	}
+	&__bonuses {
+		@include adaptiveValue("margin-top", 160, 140);
+	}
+}
+//====================================================================================================
+// MAIN-BANNER
+.main-banner {
+	padding-top: rem(70);
+	// .main-banner__container
+	&__container {
+		@media (max-width: em($containerWidth)) {
+			padding: 0;
+		}
+	}
+	// .main-banner__slider
+	&__slider {
+	}
+}
+.slider-main-banner {
+	// .slider-main-banner__body
+	&__body {
+	}
+	// .slider-main-banner__slide
+	&__slide {
+		position: relative;
+		height: rem(460);
+	}
+	// .slider-main-banner__image
+	&__image {
+		img {
+			// https://html5book.ru/svoystva-object-fit-i-object-position/
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			right: 0;
+			object-fit: cover;
+			object-position: 78%;
+			pointer-events: none;
+		}
+	}
+	// .slider-main-banner__content
+	&__content {
+		z-index: 10;
+		// background-color: red;
+		@include adaptiveValue("max-width", 390, 195);
+		@include adaptiveValue("padding-top", 100, 80);
+		@include adaptiveValue("padding-bottom", 100, 80);
+		@include adaptiveValue("margin-left", 95, 30);
+		position: relative;
+	}
+	// .slider-main-banner__title
+	&__title {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 32, 22);
+		line-height: 140%;
+		color: $color_black;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 15, 6);
+		}
+	}
+	// .slider-main-banner__text
+	&__text {
+		font-weight: 400;
+		@include adaptiveValue("font-size", 24, 16);
+		line-height: 140%;
+		color: $color_black;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 25, 21);
+		}
+	}
+	// .slider-main-banner__button
+	&__button {
+	}
+
+	.splide__pagination {
+		bottom: 1rem;
+	}
+}
+//====================================================================================================
+// OUR SERVICES
+// ===================================================================================================
+.our-services {
+	@include adaptiveValue("margin-top", 115, 45);
+
+	// .our-services__container
+	&__container {
+	}
+	// .our-services__title
+	&__title {
+		text-align: center;
+		@include adaptiveValue("margin-bottom", 33, 45);
+	}
+	// .our-services__content
+	&__content {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 85, 80);
+		}
+	}
+	// .our-services__content-1
+	&__content-1 {
+	}
+	// .our-services__content-2
+	&__content-2 {
+		flex-direction: row-reverse;
+	}
+}
+.content-our-services {
+	// .content-our-services__image
+	display: flex;
+	@media (max-width: $mobileSmall) {
+		//<768px
+		flex-direction: column;
+	}
+
+	&__image {
+		position: relative;
+		@include adaptiveValue("height", 450, 200, 0, 480, 230);
+		@media (min-width: $mobileSmall) {
+			//>450px
+			flex: 1 1 50%;
+		}
+		@media (max-width: $mobileSmall) {
+			//<450px
+			margin-bottom: rem(15);
+			padding-left: 10%;
+			padding-right: 10%;
+		}
+		img {
+			pointer-events: none;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: contain;
+			@media (max-width: $mobileSmall) {
+				//<450px
+				padding-left: inherit;
+				padding-right: inherit;
+			}
+
+			// object-position: -40%;
+			.our-services__content-1 & {
+				@media (min-width: $mobileSmall) {
+					//>450px
+					left: -12%;
+				}
+			}
+		}
+	}
+	// .content-our-services__info
+	&__info {
+		@media (min-width: $mobileSmall) {
+			//>768px
+			flex: 1 1 50%;
+		}
+
+		.our-services__content-1 & {
+			@media (min-width: $mobileSmall) {
+				//>768px
+				@include adaptiveValue("padding-left", 15, 15);
+			}
+		}
+		.our-services__content-2 & {
+			@media (min-width: $mobileSmall) {
+				//>768px
+				@include adaptiveValue("padding-left", 65, 0);
+				@include adaptiveValue("padding-right", 15, 15);
+			}
+		}
+	}
+}
+
+.info-content-our-services {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+
+	// .info-content-our-services__title
+	&__title {
+		margin-bottom: rem(20);
+		@media (max-width: $mobileSmall) {
+			//<450px
+			align-self: center;
+		}
+	}
+	// .info-content-our-services__list
+	&__list {
+		@include adaptiveValue("margin-bottom", 30, 40);
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(12);
+	}
+	// .info-content-our-services__item
+	&__item {
+		display: flex;
+		align-items: center;
+		column-gap: rem(10);
+		font-size: 18px;
+		@include adaptiveValue("font-size", 18, 16);
+		line-height: 140%;
+		&::before {
+			color: $color_secondary_blue;
+		}
+	}
+	// .info-content-our-services__button
+	&__button {
+		@media (max-width: $mobileSmall) {
+			//<450px
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+
+//====================================================================================================
+// STAGES
+// ===================================================================================================
+
+//====================================================================================================
+// CALCULATOR-PRESENTATION
+// ===================================================================================================
+.calculator-presentation {
+	@include adaptiveValue("margin-top", 120, 150);
+	// .calculator-presentation__container
+	&__container {
+		display: flex;
+		align-items: stretch;
+
+		@media (max-width: $mobile) {
+			//<768px
+			flex-direction: column-reverse;
+		}
+	}
+	// .calculator-presentation__content
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		@include adaptiveValue("margin-left", 95, 0);
+		@media (min-width: $mobile) {
+			//>768px
+			flex: 1 0 45%;
+		}
+		@media (max-width: $mobile) {
+			//<768px
+			margin-top: rem(45);
+		}
+	}
+	// .calculator-presentation__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 30, 25);
+		}
+	}
+	// .calculator-presentation__text
+	&__text {
+		@include adaptiveValue("font-size", 20, 16);
+		font-weight: 500;
+		line-height: 170%;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 35);
+		}
+	}
+	// .calculator-presentation__button
+	&__button {
+		@media (max-width: $mobile) {
+			//<768px
+			width: 100%;
+			text-align: center;
+		}
+	}
+	// .calculator-presentation__media
+	&__media {
+	}
+}
+
+.media-calculator-presentation {
+	display: flex;
+	position: relative;
+	width: 100%;
+	@include adaptiveValue("height", 560, 230);
+
+	@media (min-width: $mobile) {
+		//>768px
+		@include adaptiveValue("padding-right", 90, 10, 0, 1110, 768);
+	}
+	@media (max-width: $mobile) {
+		//<768px
+		@include adaptiveValue("padding", 100, 20, 0, 768, 320);
+		// padding: 20%;
+	}
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: calc(50%);
+		height: 100%;
+		top: 0;
+		right: 0;
+		background-color: $color_accent_blue;
+	}
+	// .media-calculator-presentation__wrapper
+	&__wrapper {
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding-left: inherit;
+		padding-right: inherit;
+		object-fit: contain;
+		filter: drop-shadow(38px 41px 30px rgba(0, 0, 0, 0.2));
+	}
+	// .media-calculator-presentation__inner
+	&__inner {
+		// display: none;
+		pointer-events: none;
+		position: absolute;
+		top: 1%;
+		right: 11%;
+		width: 78%;
+		height: 100%;
+		padding-left: inherit;
+		padding-right: inherit;
+		object-fit: contain;
+	}
+}
+//====================================================================================================
+// BONUSES
+// ===================================================================================================
+.bonuses {
+	// .bonuses__container
+	&__container {
+		position: relative;
+	}
+	// .bonuses__title
+	&__title {
+		text-align: center;
+		@include adaptiveValue("margin-bottom", 50, 35);
+	}
+	// .bonuses__slider
+	&__slider {
+		.splide__track {
+			padding: 20px 0;
+			margin: -20px;
+		}
+		.splide__pagination {
+			bottom: rem(-20);
+		}
+	}
+	// .bonuses__link
+	&__link {
+		// @include adaptiveValue("margin-top", 30, 30);
+		margin-top: rem(30);
+	}
+	// .bonuses__background
+	&__background {
+		z-index: -1;
+		position: absolute;
+		width: 100%;
+		height: rem(300);
+		top: rem(-43);
+		left: 0;
+		background-color: $color_bg_gray_2;
+	}
+}
+.slider-bonuses {
+	// .slider-bonuses__body
+	&__body {
+	}
+	// .slider-bonuses__slide
+	&__slide {
+		width: rem(262);
+		height: rem(230);
+		box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.0916);
+		border-radius: 4px;
+		background-color: $color_white;
+		padding: rem(25) rem(60) rem(20) rem(25);
+	}
+	// .slider-bonuses__image
+	&__image {
+		height: rem(54);
+		position: relative;
+		&:not(:last-child) {
+			margin: 0px 0px rem(8) 0px;
+		}
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: contain;
+			object-position: left center;
+		}
+	}
+	// .slider-bonuses__price
+	&__price {
+		font-weight: 700;
+		font-size: rem(20);
+		line-height: 170%;
+		&:not(:last-child) {
+			margin: 0px 0px rem(16) 0px;
+		}
+	}
+	// .slider-bonuses__text
+	&__text {
+		line-height: 170%;
+	}
+}
+//====================================================================================================
+// ABOUT PROJECT
+// ===================================================================================================
+.about-project {
+	@include adaptiveValue("margin-top", 150, 120);
+	// .about-project__container
+	&__container {
+	}
+	// .about-project__title
+	&__title {
+		text-align: center;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 50, 20);
+		}
+	}
+	// .about-project__content
+	&__content {
+		display: flex;
+		@include adaptiveValue("column-gap", 56, 20);
+		@media (max-width: $mobile) {
+			//<768px
+			flex-direction: column;
+			row-gap: rem(33);
+		}
+	}
+	// .about-project__logo
+	&__logo {
+		align-self: center;
+		height: rem(160);
+		width: rem(255);
+		background-color: $color_accent_blue;
+		color: $color_white;
+		font-weight: 900;
+		font-size: rem(26);
+		line-height: 100%;
+		padding: rem(68) rem(87) rem(38) rem(26);
+	}
+	// .about-project__text
+	&__text {
+		flex: 1 1 100%;
+		@include adaptiveValue("font-size", 18, 16);
+		line-height: 140%;
+		p {
+			&:not(:last-child) {
+				margin: 0px 0px rem(25) 0px;
+			}
+		}
+	}
+}
+//====================================================================================================
+// PARTNERS
+// ===================================================================================================
+.partners {
+	@include adaptiveValue("margin-top", 170, 100);
+	// .partners__container
+	&__container {
+		max-width: rem(1000 + 30);
+	}
+	// .partners__title
+	&__title {
+		text-align: center;
+		@include adaptiveValue("margin-bottom", 60, 40);
+	}
+	// .partners__slider
+	&__slider {
+		.splide__pagination {
+			bottom: rem(-25);
+		}
+	}
+}
+.slider-partners {
+	// @include adaptiveValue("padding-left", 60, 0);
+	// @include adaptiveValue("padding-right", 60, 0);
+	// .slider-partners__body
+	&__body {
+	}
+	// .slider-partners__slide
+	&__slide {
+		// width: rem(160);
+	}
+	// .slider-partners__link
+	&__link {
+		// background-color: red;
+		display: block;
+		position: relative;
+		width: rem(160);
+		height: rem(100);
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: contain;
+		}
+	}
+}
+//====================================================================================================
+// REGISTRATION FORM
+// ===================================================================================================

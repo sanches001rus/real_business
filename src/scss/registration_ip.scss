@@ -1,0 +1,328 @@
+.registration-ip-page {
+	//====================================================================================================
+	// MAIN-BANNER
+	// .registration-ip-page__main-banner
+	&__main-banner {
+		.slider-main-banner__content {
+			@include adaptiveValue("max-width", 540, 200);
+		}
+		.slider-main-banner__text {
+			@media (max-width: $mobile) {
+				//<768px
+				width: 90%;
+			}
+		}
+		.slider-main-banner__image {
+			img {
+				object-position: 74%;
+			}
+		}
+		.slider-main-banner__title {
+			margin-bottom: rem(20);
+		}
+	}
+
+	//====================================================================================================
+	// INSTRUCTION
+	// .registration-ip-page__instruction
+	&__instruction {
+	}
+
+	//====================================================================================================
+	// UTP
+	// .registration-ip-page__utp
+	&__utp {
+	}
+
+	//====================================================================================================
+	// COMPARE-ADVANTAGES
+	// .registration-ip-page__compare-advantages
+	&__compare-advantages {
+	}
+
+	//====================================================================================================
+	// SERVICE-CARDS
+	// .registration-ip-page__service-cards
+	&__service-cards {
+	}
+
+	//====================================================================================================
+	// CALCULATOR-PROMO
+	// .registration-ip-page__calculator-promo
+	&__calculator-promo {
+		@include adaptiveValue("margin-top", 160, 120);
+	}
+
+	//====================================================================================================
+	// FAQ
+	// .registration-ip-page__faq
+	&__faq {
+	}
+
+	//====================================================================================================
+	// DOCUMENTS
+	// .registration-ip-page__documents
+	&__documents {
+		@include adaptiveValue("margin-top", 190, 100);
+	}
+	//====================================================================================================
+	// FORM
+	// .registration-ip-page__registration-form
+	&__registration-form {
+		@include adaptiveValue("margin-top", 200, 120);
+	}
+}
+
+//====================================================================================================
+// INSTRUCTION
+//====================================================================================================
+.instruction-registration-ip-page {
+	@include adaptiveValue("margin-top", 90, 80);
+	// .instruction-registration-ip-page__container
+	&__container {
+		@include adaptiveValue("padding-left", 100, 15);
+		@include adaptiveValue("padding-right", 100, 15);
+	}
+	// .instruction-registration-ip-page__block
+	&__block {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("row-gap", 55, 40);
+	}
+	// .instruction-registration-ip-page__item
+	&__item {
+		display: flex;
+		column-gap: rem(20);
+		@media (max-width: $mobileSmall) {
+			//<450px
+			flex-direction: column;
+		}
+	}
+	// .instruction-registration-ip-page__icon
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: rem(65);
+		width: rem(65);
+		flex: 0 0 rem(65);
+		font-size: rem(35);
+		color: $color_accent_blue;
+		background: $color_white;
+		border: 1px solid $color_light_blue;
+		box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.0916);
+	}
+	// .instruction-registration-ip-page__content
+	&__content {
+		padding-top: rem(18);
+	}
+	// .instruction-registration-ip-page__title
+	&__title {
+		&:not(:last-child) {
+			margin: 0px 0px rem(20) 0px;
+		}
+	}
+	// .instruction-registration-ip-page__text
+	&__text {
+		@include adaptiveValue("font-size", 18, 16);
+		line-height: 160%;
+	}
+}
+
+//====================================================================================================
+// UTP
+//====================================================================================================
+.utp-registration-ip-page {
+	@include adaptiveValue("margin-top", 100, 80);
+	// .utp-registration-ip-page__container
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (max-width: #{em($maxWidthContainer)}) {
+			padding: 0px;
+		}
+	}
+	// .utp-registration-ip-page__text
+	&__text {
+		background-color: $color_accent_blue;
+		@include adaptiveValue("padding-top", 60, 100);
+		@include adaptiveValue("padding-right", 220, 15);
+		@include adaptiveValue("padding-bottom", 60, 100);
+		@include adaptiveValue("padding-left", 220, 15);
+
+		color: $color_white;
+		font-weight: 700;
+		font-size: rem(24);
+		line-height: 160%;
+	}
+}
+
+//====================================================================================================
+// COMPARE-ADVANTAGES
+//====================================================================================================
+.compare-advantages-registration-ip-page {
+	@include adaptiveValue("margin-top", 115, 80);
+	// .compare-advantages-registration-ip-page__container
+	&__container {
+		display: flex;
+		@media (max-width: $mobile) {
+			//<768px
+			flex-direction: column;
+			row-gap: rem(50);
+		}
+	}
+	// .compare-advantages-registration-ip-page__advantages-block
+	&__advantages-block {
+	}
+	// .compare-advantages-registration-ip-page__title
+	&__title {
+		text-align: center;
+		margin-bottom: rem(20);
+		@media (max-width: $mobile) {
+			//<768px
+			text-align: left;
+		}
+	}
+	// .compare-advantages-registration-ip-page__list
+	&__list {
+	}
+	// .compare-advantages-registration-ip-page__item
+	&__item {
+		display: flex;
+		column-gap: rem(12);
+		font-size: rem(16);
+		line-height: 209%;
+		@include adaptiveValue("padding-left", 40, 0);
+		@include adaptiveValue("padding-right", 0, 0);
+		&:not(:last-child) {
+			margin: 0px 0px rem(10) 0px;
+		}
+		&::before {
+			color: $color_accent_blue;
+			margin-top: rem(8);
+		}
+	}
+}
+
+//====================================================================================================
+// SERVICE-CARDS
+//====================================================================================================
+.service-cards-registration-ip-page {
+	// .service-cards-registration-ip-page__container
+	@include adaptiveValue("margin-top", 115, 80);
+	&__container {
+		display: flex;
+		column-gap: rem(30);
+		@media (max-width: $mobile) {
+			//<768px
+			flex-direction: column;
+			row-gap: rem(35);
+		}
+	}
+	// .service-cards-registration-ip-page__service-card
+	&__service-card {
+	}
+}
+.service-card {
+	@include adaptiveValue("padding-top", 40, 35);
+	@include adaptiveValue("padding-right", 40, 20);
+	@include adaptiveValue("padding-bottom", 40, 35);
+	@include adaptiveValue("padding-left", 40, 20);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex: 1;
+	background: $color_white;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.0916);
+	border-radius: 4px;
+
+	// .service-card__content
+	&__content {
+	}
+	// .service-card__title
+	&__title {
+		display: flex;
+		@include adaptiveValue("margin-bottom", 35, 17);
+		.h3 {
+			color: $color_accent_blue;
+			display: flex;
+			align-items: center;
+			width: 100%;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+			&::before {
+				padding-left: rem(15);
+				font-size: rem(42);
+			}
+		}
+	}
+	// .service-card__stages-list
+	&__stages-list {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(10);
+		@include adaptiveValue("margin-bottom", 43, 38);
+	}
+	// .service-card__stages-item
+	&__stages-item {
+		display: flex;
+		column-gap: rem(5);
+		align-items: center;
+		font-size: rem(15);
+		line-height: 150%;
+		&::before {
+			padding: 0 rem(4);
+			font-size: rem(15);
+			color: $color_accent_blue;
+		}
+	}
+	// .service-card__actions
+	&__actions {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	// .service-card__price
+	&__price {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 48, 38);
+		line-height: percent(58, 48);
+	}
+	// .service-card__button
+	&__button {
+	}
+}
+
+//====================================================================================================
+// CALCULATOR-PROMO
+//====================================================================================================
+
+//====================================================================================================
+// FAQ
+//====================================================================================================
+.faq-registration-ip-page {
+	@include adaptiveValue("margin-top", 170, 140);
+	// .faq-registration-ip-page__container
+	&__container {
+		@include adaptiveValue("padding-left", 55, 15);
+		@include adaptiveValue("padding-right", 55, 15);
+	}
+	// .faq-registration-ip-page__title
+	&__title {
+		text-align: center;
+		@include adaptiveValue("margin-bottom", 40, 50);
+	}
+	// .faq-registration-ip-page__spollers
+	&__spollers {
+	}
+}
+
+//====================================================================================================
+// DOCUMENTS
+//====================================================================================================
+
+//====================================================================================================
+// FORM
+//====================================================================================================

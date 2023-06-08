@@ -1,0 +1,70 @@
+//====================================================================================================
+.footer {
+	@include adaptiveValue("margin-top", 60, 40);
+	@include adaptiveValue("margin-bottom", 60, 40);
+	// .footer__container
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $mobile) {
+			//<768px
+			flex-direction: column;
+			row-gap: rem(30);
+		}
+	}
+	// .footer__contacts
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(10);
+	}
+	// .footer__phone
+	&__phone {
+		font-weight: 700;
+		font-size: rem(24);
+		line-height: 120%;
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $color_secondary_blue;
+			}
+		}
+	}
+	// .footer__city
+	&__city {
+		font-weight: 600;
+		font-size: rem(18);
+	}
+
+	// .footer__operating-mode
+	&__operating-mode {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(10);
+		font-size: rem(16);
+		line-height: 140%;
+	}
+	// .footer__adress
+	&__adress {
+	}
+	// .footer__adress-lable
+	&__adress-lable {
+	}
+	// .footer__adress-value
+	&__adress-value {
+	}
+	// .footer__hours
+	&__hours {
+	}
+	// .footer__hours-lable
+	&__hours-lable {
+	}
+	// .footer__hours-value
+	&__hours-value {
+	}
+	// .footer__copyright
+	&__copyright {
+	}
+}
+
+//====================================================================================================

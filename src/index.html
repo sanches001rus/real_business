@@ -1,0 +1,255 @@
+{% extends 'layout.html' %}
+{% set title = "Главная" %}
+
+{% import "bonuses.html" as bonuses %}
+{% import "form.html" as form %}
+
+{% block page %}
+
+<main class="page">
+
+	<section class="main-banner">
+		<div class="main-banner__container">
+			<div class="main-banner__slider slider-main-banner">
+				<div class="slider-main-banner__body splide" aria-label="Splide Basic HTML Example">
+
+					<div class="splide__track">
+						<ul class="splide__list">
+
+							<li class="slider-main-banner__slide splide__slide">
+								<div class="slider-main-banner__image">
+									<img src="@img/main_page_banner.png" alt="">
+								</div>
+								<div class="slider-main-banner__content">
+									<div data-aos="fade-right" data-aos-easing="ease" data-aos-delay="0"
+										class="slider-main-banner__title">
+										Зарегистрируем<br>
+										Ваш бизнес бесплатно!</div>
+									<div data-aos="fade-right" data-aos-easing="ease" data-aos-delay="200"
+										class="slider-main-banner__text">
+										– 15 минут<br>
+										– 2 документа
+									</div>
+									<div data-aos="fade-right" data-aos-easing="ease" data-aos-delay="400">
+										<a href="" class="slider-main-banner__button btn btn_big">Открыть бизнес</a>
+									</div>
+
+								</div>
+							</li>
+
+							<li class="slider-main-banner__slide splide__slide">
+								<div class="slider-main-banner__image">
+									<img src="@img/main_page_banner.png" alt="">
+								</div>
+								<div class="slider-main-banner__content">
+									<div class="slider-main-banner__title">Зарегистрируем<br>
+										Ваш бизнес бесплатно!</div>
+									<div data-aos="zoom-in" class="slider-main-banner__text">
+										– 15 минут<br>
+										– 2 документа
+									</div>
+									<a href="" class="slider-main-banner__button btn btn_big">Открыть бизнес</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="our-services">
+		<div class="our-services__container">
+			<div class="our-services__title">
+				<h2 data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400" class="h2">Наши сервисы</h2>
+
+
+			</div>
+
+			<div data-aos="fade-right" data-aos-delay="600" data-aos-easing="ease"
+				class="our-services__content our-services__content-1 content-our-services">
+				<div class="content-our-services__image">
+					<img src="@img/man.png" alt="">
+				</div>
+				<div class="content-our-services__info info-content-our-services">
+					<div class="info-content-our-services__title">
+						<h3 class="h3">Регистрация ИП</h3>
+					</div>
+					<ul class="info-content-our-services__list">
+						<li class="info-content-our-services__item _icon-check">Подберем коды ОКВЭД</li>
+						<li class="info-content-our-services__item _icon-check">Поможем с выбором формы налогообложения
+						</li>
+						<li class="info-content-our-services__item _icon-check">Выпустим электронно цифровую подпись
+						</li>
+						<li class="info-content-our-services__item _icon-check">Подготовим и отправим документы в ИФНС
+						</li>
+					</ul>
+					<a href="" class="info-content-our-services__button btn btn_big">Стать ИП</a>
+				</div>
+
+			</div>
+
+			<div data-aos="fade-left" data-aos-delay="0" data-aos-easing="ease"
+				class="our-services__content our-services__content-2 content-our-services">
+				<div class="content-our-services__image">
+					<img src="@img/women.png" alt="">
+				</div>
+				<div class="content-our-services__info info-content-our-services">
+					<div class="info-content-our-services__title">
+						<h3 class="h3">Регистрация ООО</h3>
+					</div>
+					<ul class="info-content-our-services__list">
+						<li class="info-content-our-services__item _icon-check">Подберем коды ОКВЭД</li>
+						<li class="info-content-our-services__item _icon-check">Поможем с выбором формы налогообложения
+						</li>
+						<li class="info-content-our-services__item _icon-check">Выпустим электронно цифровую подпись
+						</li>
+						<li class="info-content-our-services__item _icon-check">Подготовим и отправим документы в ИФНС
+						</li>
+					</ul>
+					<a href="" class="info-content-our-services__button btn btn_big">Стать ООО</a>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+	<section class="page__stages stages">
+		<div class="stages__container">
+			<div class="stages__title">
+				<h2 class="h2">Этапы регистрации
+				</h2>
+			</div>
+			<div class="stages__slider slider-stages">
+				<div class="slider-stages__body splide" aria-label="Splide Basic HTML Example">
+
+					<div class="splide__track">
+						<ul class="splide__list">
+
+							<li class="slider-stages__slide splide__slide">
+								<div class="slider-stages__image">
+									<img src="@img/monitor.svg" alt="">
+								</div>
+								<div class="slider-stages__title">5 минут</div>
+								<div class="slider-stages__text">Заполнить заявку и можно принимать платежи</div>
+							</li>
+
+							<li class="slider-stages__slide splide__slide">
+								<div class="slider-stages__image">
+									<img src="@img/download.svg" alt="">
+								</div>
+								<div class="slider-stages__title">5 минут</div>
+								<div class="slider-stages__text">Загрузить фото документов</div>
+							</li>
+
+							<li class="slider-stages__slide splide__slide">
+								<div class="slider-stages__image">
+									<img src="@img/pen.svg" alt="">
+								</div>
+								<div class="slider-stages__title">5 минут</div>
+								<div class="slider-stages__text">Подписать документы на встрече с менеджером</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="calculator-presentation">
+		<div class="calculator-presentation__container">
+
+			<div data-aos="fade-right" data-aos-easing="ease" data-aos-delay="0" class="calculator-presentation__content">
+				<div class="calculator-presentation__title">
+					<h2 class="h2">"Калькулятор РКО"</h2>
+				</div>
+				<div class="calculator-presentation__text">Рассчитайте комиссию по рассчетно-кассовому обслуживанию,
+					воспользовавшись нашим сервисом
+				</div>
+				<a href="" class="calculator-presentation__button btn btn_big">Открыть счет</a>
+			</div>
+
+			<div data-aos="fade-left" data-aos-easing="ease" data-aos-delay="0"
+				class="calculator-presentation__media media-calculator-presentation">
+				<img class="media-calculator-presentation__wrapper" src="@img/macbook.svg" alt="">
+				<img class="media-calculator-presentation__inner" src="@img/screen.png" alt="">
+			</div>
+		</div>
+	</section>
+
+	{{ bonuses.bonuses('page__bonuses') }}
+
+	<section class="about-project">
+		<div class="about-project__container">
+			<div class="about-project__title">
+				<h2 class="h2">О проекте</h2>
+			</div>
+			<div class="about-project__content">
+				<div class="about-project__logo">Реальный Бизнес</div>
+				<div class="about-project__text">
+					<p>Проект «Реальный бизнес» призван помочь молодым предпринимателям в государственном оформлении бизнеса.
+					</p>
+					<p>Наша команда из квалифицированных юристов и бухгалтеров помогут Вам определить…. именно для вашей
+						ситуации и занимайтесь более важными бизнес процессами, а рутину мы возьмем на себя.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="partners">
+		<div class="partners__container">
+			<div class="partners__title">
+				<h2 class="h2">Наши партнеры</h2>
+			</div>
+
+			<div class="partners__slider slider-partners">
+				<div class="slider-partners__body splide" aria-label="Splide Basic HTML Example">
+
+					<div class="splide__track">
+						<ul class="splide__list">
+
+							<li class="slider-partners__slide splide__slide">
+								<a href="" class="slider-partners__link">
+									<img src="@img/mts-bank.svg" alt="">
+								</a>
+							</li>
+
+							<li class="slider-partners__slide splide__slide">
+								<a href="" class="slider-partners__link">
+									<img src="@img/rosbank.svg" alt="">
+								</a>
+							</li>
+
+							<li class="slider-partners__slide splide__slide">
+								<a href="" class="slider-partners__link">
+									<img src="@img/sber.svg" alt="">
+								</a>
+							</li>
+
+							<li class="slider-partners__slide splide__slide">
+								<a href="" class="slider-partners__link">
+									<img src="@img/tinkoff.svg" alt="">
+								</a>
+							</li>
+
+							<li class="slider-partners__slide splide__slide">
+								<a href="" class="slider-partners__link">
+									<img src="@img/tochka.svg" alt="">
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	{{ form.form('page__registration-form') }}
+
+</main>
+
+{% endblock %}

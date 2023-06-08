@@ -1,0 +1,54 @@
+<section class="@@pagePlusBemClass registration-form">
+	<div class="registration-form__container">
+		<div class="registration-form__image">
+			<img src="@img/man_on_form.png" alt="">
+		</div>
+		<div class="registration-form__form-block form-block-registration">
+			<div class="form-block-registration__title">
+				<h2 class="h2">Заявка на регистрацию бизнеса</h2>
+			</div>
+			<form action="" name="registration-form" class="form-block-registration__form">
+
+				<div class="form-block-registration__list">
+					<div class="form-block-registration__item">
+						<label for="company_name_input" class="form-block-registration__label">Название
+							организации</label>
+						<input id="company_name_input" class="form-block-registration__input" placeholder="Введите название"
+							value="" type="text" name="companyNameInput">
+					</div>
+					<div class="form-block-registration__item">
+						<label for="phone_input" class="form-block-registration__label">Телефон</label>
+						<input id="phone_input" class="form-block-registration__input" placeholder="+7 999 999 99 99" value=""
+							type="tel" name="phoneInput">
+					</div>
+					<div class="form-block-registration__item">
+						<label for="clients_name_input" class="form-block-registration__label">Ваше имя</label>
+						<input id="clients_name_input" class="form-block-registration__input" placeholder="Сергей" value=""
+							type="text" name="clientsNameInput">
+					</div>
+
+					<div class="form-block-registration__item">
+						<label for="clients_email_input" class="form-block-registration__label">E-mail</label>
+						<input id="clients_email_input" class="form-block-registration__input" placeholder="pochta@email.ru"
+							value="" type="email" name="clientsEmailInput">
+					</div>
+				</div>
+				<div class="form-block-registration__submit-actions submit-actions-form-block-registration">
+					<div class="submit-actions-form-block-registration__item">
+						<input id="policy_input" class="submit-actions-form-block-registration__checkbox checkbox__input"
+							type="checkbox" name="policyInput">
+						<label for="policy_input" class="submit-actions-form-block-registration__label checkbox__label">
+
+							<span>Я прочитал(а)<a class="submit-actions-form-block-registration__policy-link" href="">
+									Политику конфиденциальности</a>и соглашаюсь с её условиями</span>
+						</label>
+					</div>
+					<div class="submit-actions-form-block-registration__item">
+						<button type="submit" class="submit-actions-form-block-registration__submit btn btn_big">Отправить
+							заявку</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

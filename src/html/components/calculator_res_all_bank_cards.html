@@ -1,0 +1,340 @@
+{% macro card(quantity=500, logo='tinkoff_2.svg') %}
+
+<div data-iso-item class="calculator-page-results-list__item calculator-page-banks-cards">
+
+	<div class="calculator-page-banks-cards__main-card-block">
+
+		<div class="calculator-page-bank-card">
+			<div class="calculator-page-bank-card__main-info-block calculator-page-bank-card-main-info-block">
+				<div class="calculator-page-bank-card-main-info-block__data data-calculator-page-bank-card-main-info-block">
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_logo">
+						<img src="@img/{{logo}}" alt="">
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_tariffs-name">
+						<div
+							class="data-calculator-page-bank-card-main-info-block__item-name column-name-results-calculator-page">
+							Тариф</div>
+						<div class="data-calculator-page-bank-card-main-info-block__item-value">Первый шаг
+						</div>
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_opening-cost">
+						<div
+							class="data-calculator-page-bank-card-main-info-block__item-name column-name-results-calculator-page">
+							Открытие
+							счета</div>
+						<div class="data-calculator-page-bank-card-main-info-block__item-value">0 ₽</div>
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item  data-calculator-page-bank-card-main-info-block__item_maintenance-cost">
+						<div
+							class="data-calculator-page-bank-card-main-info-block__item-name column-name-results-calculator-page">
+							Обслуживание
+						</div>
+						<div class="data-calculator-page-bank-card-main-info-block__item-value sort_it">{{quantity}} ₽</div>
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_button">
+						<a href="#" class="btn btn_big">Оставить заявку</a>
+					</div>
+				</div>
+
+				<div
+					class="calculator-page-bank-card-main-info-block__controls controls-calculator-page-bank-card-main-info-block">
+					<div
+						class="controls-calculator-page-bank-card-main-info-block__item controls-calculator-page-bank-card-main-info-block__item_toggle-other-tariffs _icon-arrow">
+						Еще тарифы</div>
+					<div
+						class="controls-calculator-page-bank-card-main-info-block__item controls-calculator-page-bank-card-main-info-block__item_toggle-full-info _icon-arrow">
+						Подробнее</div>
+				</div>
+			</div>
+
+			<div hidden class="calculator-page-bank-card__full-info-block full-info-block-calculator-page-bank-card">
+
+				<div data-tabs class="full-info-block-calculator-page-bank-card__tabs tabs">
+					<nav data-tabs-titles class="tabs__navigation">
+						<button type="button" class="tabs__title _tab-active">Открытие</button>
+						<button type="button" class="tabs__title">Обслуживание в месяц</button>
+						<button type="button" class="tabs__title">Дополнительные услуги</button>
+					</nav>
+					<div data-tabs-body class="tabs__content">
+						<div class="tabs__body">
+							<ul class="tabs__list">
+								<li class="tabs__item">Открытие счета: 0 руб</li>
+								<li class="tabs__item">Подключение интернет-банка: 0 руб.</li>
+							</ul>
+						</div>
+						<div class="tabs__body">
+							<ul class="tabs__list">
+								<li class="tabs__item">Обслуживание счета: {{quantity}} руб.</li>
+								<li class="tabs__item">Подключение интернет-банка: 0 руб.</li>
+							</ul>
+						</div>
+						<div class="tabs__body">
+							<ul class="tabs__list">
+								<li class="tabs__item">Персональный менеджер</li>
+								<li class="tabs__item">Круглосуточная поддержка</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div hidden class="calculator-page-banks-cards__sub-card-block">
+
+		<div class="calculator-page-bank-card">
+			<div class="calculator-page-bank-card__main-info-block calculator-page-bank-card-main-info-block">
+				<div class="calculator-page-bank-card-main-info-block__data data-calculator-page-bank-card-main-info-block">
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_logo">
+						<img src="@img/{{logo}}" alt="">
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_tariffs-name">
+						<div
+							class="data-calculator-page-bank-card-main-info-block__item-name column-name-results-calculator-page">
+							Тариф</div>
+						<div class="data-calculator-page-bank-card-main-info-block__item-value">Второй шаг
+						</div>
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_opening-cost">
+						<div
+							class="data-calculator-page-bank-card-main-info-block__item-name column-name-results-calculator-page">
+							Открытие
+							счета</div>
+						<div class="data-calculator-page-bank-card-main-info-block__item-value">0 ₽</div>
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item  data-calculator-page-bank-card-main-info-block__item_maintenance-cost">
+						<div
+							class="data-calculator-page-bank-card-main-info-block__item-name column-name-results-calculator-page">
+							Обслуживание
+						</div>
+						<div class="data-calculator-page-bank-card-main-info-block__item-value">{{quantity}} ₽</div>
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_button">
+						<a href="#" class="btn btn_big">Оставить заявку</a>
+					</div>
+				</div>
+
+				<div
+					class="calculator-page-bank-card-main-info-block__controls controls-calculator-page-bank-card-main-info-block">
+					<div
+						class="controls-calculator-page-bank-card-main-info-block__item controls-calculator-page-bank-card-main-info-block__item_toggle-other-tariffs _icon-arrow">
+						Еще тарифы</div>
+					<div
+						class="controls-calculator-page-bank-card-main-info-block__item controls-calculator-page-bank-card-main-info-block__item_toggle-full-info _icon-arrow">
+						Подробнее</div>
+				</div>
+			</div>
+			<div hidden class="calculator-page-bank-card__full-info-block full-info-block-calculator-page-bank-card">
+
+				<div data-tabs class="full-info-block-calculator-page-bank-card__tabs tabs">
+					<nav data-tabs-titles class="tabs__navigation">
+						<button type="button" class="tabs__title _tab-active">Открытие</button>
+						<button type="button" class="tabs__title">Обслуживание в месяц</button>
+						<button type="button" class="tabs__title">Дополнительные услуги</button>
+					</nav>
+					<div data-tabs-body class="tabs__content">
+						<div class="tabs__body">
+							<ul class="tabs__list">
+								<li class="tabs__item">Открытие счета: 0 руб</li>
+								<li class="tabs__item">Подключение интернет-банка: 0 руб.</li>
+							</ul>
+						</div>
+						<div class="tabs__body">
+							<ul class="tabs__list">
+								<li class="tabs__item">Обслуживание счета: {{quantity}} руб.</li>
+								<li class="tabs__item">Подключение интернет-банка: 0 руб.</li>
+							</ul>
+						</div>
+						<div class="tabs__body">
+							<ul class="tabs__list">
+								<li class="tabs__item">Персональный менеджер</li>
+								<li class="tabs__item">Круглосуточная поддержка</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="calculator-page-bank-card">
+			<div class="calculator-page-bank-card__main-info-block calculator-page-bank-card-main-info-block">
+				<div class="calculator-page-bank-card-main-info-block__data data-calculator-page-bank-card-main-info-block">
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_logo">
+						<img src="@img/{{logo}}" alt="">
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_tariffs-name">
+						<div
+							class="data-calculator-page-bank-card-main-info-block__item-name column-name-results-calculator-page">
+							Тариф</div>
+						<div class="data-calculator-page-bank-card-main-info-block__item-value">Третий шаг
+						</div>
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_opening-cost">
+						<div
+							class="data-calculator-page-bank-card-main-info-block__item-name column-name-results-calculator-page">
+							Открытие
+							счета</div>
+						<div class="data-calculator-page-bank-card-main-info-block__item-value">0 ₽</div>
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item  data-calculator-page-bank-card-main-info-block__item_maintenance-cost">
+						<div
+							class="data-calculator-page-bank-card-main-info-block__item-name column-name-results-calculator-page">
+							Обслуживание
+						</div>
+						<div class="data-calculator-page-bank-card-main-info-block__item-value">{{quantity}} ₽</div>
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_button">
+						<a href="#" class="btn btn_big">Оставить заявку</a>
+					</div>
+				</div>
+
+				<div
+					class="calculator-page-bank-card-main-info-block__controls controls-calculator-page-bank-card-main-info-block">
+					<div
+						class="controls-calculator-page-bank-card-main-info-block__item controls-calculator-page-bank-card-main-info-block__item_toggle-other-tariffs _icon-arrow">
+						Еще тарифы</div>
+					<div
+						class="controls-calculator-page-bank-card-main-info-block__item controls-calculator-page-bank-card-main-info-block__item_toggle-full-info _icon-arrow">
+						Подробнее</div>
+				</div>
+			</div>
+			<div hidden class="calculator-page-bank-card__full-info-block full-info-block-calculator-page-bank-card">
+
+				<div data-tabs class="full-info-block-calculator-page-bank-card__tabs tabs">
+					<nav data-tabs-titles class="tabs__navigation">
+						<button type="button" class="tabs__title _tab-active">Открытие</button>
+						<button type="button" class="tabs__title">Обслуживание в месяц</button>
+						<button type="button" class="tabs__title">Дополнительные услуги</button>
+					</nav>
+					<div data-tabs-body class="tabs__content">
+						<div class="tabs__body">
+							<ul class="tabs__list">
+								<li class="tabs__item">Открытие счета: 0 руб</li>
+								<li class="tabs__item">Подключение интернет-банка: 0 руб.</li>
+							</ul>
+						</div>
+						<div class="tabs__body">
+							<ul class="tabs__list">
+								<li class="tabs__item">Обслуживание счета: {{quantity}} руб.</li>
+								<li class="tabs__item">Подключение интернет-банка: 0 руб.</li>
+							</ul>
+						</div>
+						<div class="tabs__body">
+							<ul class="tabs__list">
+								<li class="tabs__item">Персональный менеджер</li>
+								<li class="tabs__item">Круглосуточная поддержка</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="calculator-page-bank-card">
+			<div class="calculator-page-bank-card__main-info-block calculator-page-bank-card-main-info-block">
+				<div class="calculator-page-bank-card-main-info-block__data data-calculator-page-bank-card-main-info-block">
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_logo">
+						<img src="@img/{{logo}}" alt="">
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_tariffs-name">
+						<div
+							class="data-calculator-page-bank-card-main-info-block__item-name column-name-results-calculator-page">
+							Тариф</div>
+						<div class="data-calculator-page-bank-card-main-info-block__item-value">Сядь отдохни
+						</div>
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_opening-cost">
+						<div
+							class="data-calculator-page-bank-card-main-info-block__item-name column-name-results-calculator-page">
+							Открытие
+							счета</div>
+						<div class="data-calculator-page-bank-card-main-info-block__item-value">0 ₽</div>
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item  data-calculator-page-bank-card-main-info-block__item_maintenance-cost">
+						<div
+							class="data-calculator-page-bank-card-main-info-block__item-name column-name-results-calculator-page">
+							Обслуживание
+						</div>
+						<div class="data-calculator-page-bank-card-main-info-block__item-value">{{quantity}} ₽</div>
+					</div>
+					<div
+						class="data-calculator-page-bank-card-main-info-block__item data-calculator-page-bank-card-main-info-block__item_button">
+						<a href="#" class="btn btn_big">Оставить заявку</a>
+					</div>
+				</div>
+
+				<div
+					class="calculator-page-bank-card-main-info-block__controls controls-calculator-page-bank-card-main-info-block">
+					<div
+						class="controls-calculator-page-bank-card-main-info-block__item controls-calculator-page-bank-card-main-info-block__item_toggle-other-tariffs _icon-arrow">
+						Еще тарифы</div>
+					<div
+						class="controls-calculator-page-bank-card-main-info-block__item controls-calculator-page-bank-card-main-info-block__item_toggle-full-info _icon-arrow">
+						Подробнее</div>
+				</div>
+			</div>
+			<div hidden class="calculator-page-bank-card__full-info-block full-info-block-calculator-page-bank-card">
+
+				<div data-tabs class="full-info-block-calculator-page-bank-card__tabs tabs">
+					<nav data-tabs-titles class="tabs__navigation">
+						<button type="button" class="tabs__title _tab-active">Открытие</button>
+						<button type="button" class="tabs__title">Обслуживание в месяц</button>
+						<button type="button" class="tabs__title">Дополнительные услуги</button>
+					</nav>
+					<div data-tabs-body class="tabs__content">
+						<div class="tabs__body">
+							<ul class="tabs__list">
+								<li class="tabs__item">Открытие счета: 0 руб</li>
+								<li class="tabs__item">Подключение интернет-банка: 0 руб.</li>
+							</ul>
+						</div>
+						<div class="tabs__body">
+							<ul class="tabs__list">
+								<li class="tabs__item">Обслуживание счета: {{quantity}} руб.</li>
+								<li class="tabs__item">Подключение интернет-банка: 0 руб.</li>
+							</ul>
+						</div>
+						<div class="tabs__body">
+							<ul class="tabs__list">
+								<li class="tabs__item">Персональный менеджер</li>
+								<li class="tabs__item">Круглосуточная поддержка</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+
+
+</div>
+
+
+{% endmacro %}

@@ -1,0 +1,505 @@
+$calculatorPageContainerWidth: calc(920 + 30);
+.calculator-page {
+	//====================================================================================================
+	// CALCULATOR FILTER
+	// .calculator-page__filter
+	&__filter {
+		@include adaptiveValue("margin-top", 160, 130); //+ 70
+	}
+
+	//====================================================================================================
+	// CALCULATOR RESULTS
+	// .calculator-page__results
+	&__results {
+		@include adaptiveValue("margin-top", 90, 60);
+	}
+}
+
+//====================================================================================================
+// CALCULATOR FILTER
+// ===================================================================================================
+.filter-calculator {
+	// .filter-calculator__container
+	&__container {
+		max-width: rem($calculatorPageContainerWidth);
+	}
+	// .filter-calculator__form
+	&__form {
+	}
+	// .filter-calculator__mode-choice
+	&__mode-choice {
+	}
+	// .filter-calculator__inputs-block
+	&__inputs-block {
+		@include adaptiveValue("margin-top", 35, 50);
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		@include adaptiveValue("column-gap", 30, 10);
+		@include adaptiveValue("row-gap", 20, 15);
+		@media (max-width: em(650)) {
+			grid-template-columns: 1fr;
+		}
+	}
+	// .filter-calculator__input-item
+	&__input-item {
+	}
+	// .filter-calculator__additional
+	&__additional {
+		@include adaptiveValue("margin-top", 50, 40);
+	}
+}
+.mode-choice-filter-calculator {
+	// .mode-choice-filter-calculator__title
+	&__title {
+		@include adaptiveValue("margin-bottom", 35, 40);
+	}
+	// .mode-choice-filter-calculator__options
+	&__options {
+	}
+}
+.mode-choice-options {
+	// .mode-choice-options__item
+	display: flex;
+	align-items: center;
+	column-gap: rem(10);
+	&__item {
+		display: inline-flex;
+	}
+	// .mode-choice-options__input
+	&__input {
+		cursor: pointer;
+		display: none;
+
+		&:checked + .mode-choice-options__label {
+			border: 1px solid $color_accent_blue;
+			color: $color_accent_blue;
+			// background-color: $color_light_blue;
+		}
+	}
+	// .mode-choice-options__label
+	&__label {
+		cursor: pointer;
+		font-weight: 500;
+		font-size: rem(18);
+		line-height: percent(22, 18);
+		padding: rem(8) rem(34);
+		border: 1px solid transparent;
+		border-radius: rem(19);
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $color_accent_blue;
+			}
+		}
+	}
+}
+.input-item-filter-calculator {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	// .input-item-filter-calculator__label
+	&__label {
+		position: absolute;
+		top: rem(-8);
+		left: rem(9);
+		padding: 0 rem(6);
+
+		font-weight: 500;
+		font-size: rem(14);
+		line-height: percent(17, 14);
+		color: $color_gray;
+		background-color: $color_white;
+	}
+	// .input-item-filter-calculator__input
+	&__input {
+		width: 100%;
+		height: rem(60);
+		border: 1px solid $color_gray;
+		border-radius: rem(4) rem(4) rem(0) rem(0);
+		padding: 0 rem(15);
+		font-weight: 500;
+		font-size: rem(18);
+		line-height: percent(22, 18);
+	}
+	// .input-item-filter-calculator__range-slider
+	&__range-slider {
+		margin-top: rem(-6);
+	}
+	// .input-item-filter-calculator__pips
+	&__pips {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 500;
+		font-size: rem(12);
+		line-height: percent(15, 12);
+		color: $color_gray;
+		margin-top: rem(6);
+	}
+}
+.additional-filter-calculator {
+	.spollers__title {
+		display: inline-flex;
+	}
+
+	// .additional-filter-calculator__list
+	&__list {
+		//https://ru.stackoverflow.com/questions/1326920/Как-разбить-список-на-три-колонки-без-указания-фиксированной-высоты
+		margin-top: rem(32);
+		display: grid;
+		gap: rem(15);
+
+		@media (min-width: em(700)) {
+			grid-template-rows: repeat(3, 1fr);
+			grid-auto-flow: column;
+			grid-auto-columns: 1fr;
+		}
+	}
+	// .additional-filter-calculator__item
+	&__item {
+	}
+	// .additional-filter-calculator__checkbox
+	&__checkbox {
+	}
+	// .additional-filter-calculator__label
+	&__label {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 18, 16);
+		line-height: percent(22, 18);
+		position: relative;
+		padding-left: rem(28);
+		user-select: none;
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+//====================================================================================================
+// CALCULATOR RESULTS
+// ===================================================================================================
+// переменные ширины
+$calculatorPageBankCardFirst: 163;
+$calculatorPageBankCardSecond: 190;
+$calculatorPageBankCardThird: 176;
+$calculatorPageBankCardFourth: 167;
+$calculatorPageBankCardLast: 189;
+$calculatorPageBankCardMainInfoPadding: 18;
+$calculatorPageBankCardMobileScreenWidth: 880;
+
+.results-calculator-page {
+	// .results-calculator-page__container
+	&__container {
+		max-width: rem($calculatorPageContainerWidth);
+		@media (max-width: #{em($calculatorPageBankCardMobileScreenWidth)}) {
+			//<880px
+			max-width: rem(500);
+		}
+	}
+	// .results-calculator-page__header
+	&__header {
+		z-index: 1;
+		position: sticky;
+		top: rem(70);
+		background-color: $color_white;
+		display: flex;
+		width: 100%;
+		// background-color: yellow;
+		padding-left: rem($calculatorPageBankCardFirst + $calculatorPageBankCardMainInfoPadding);
+		padding-right: rem($calculatorPageBankCardLast + $calculatorPageBankCardMainInfoPadding);
+		padding-top: rem(10);
+		padding-bottom: rem(10);
+		border: 1px solid $color_light_blue;
+		@media (max-width: #{em($calculatorPageBankCardMobileScreenWidth)}) {
+			//<880px
+			display: none;
+		}
+	}
+	// .results-calculator-page__column-name
+	&__column-name {
+		display: flex;
+		&:first-child {
+			// background-color: red;
+			width: percent(
+				$calculatorPageBankCardSecond,
+				$calculatorPageBankCardSecond + $calculatorPageBankCardThird + $calculatorPageBankCardFourth
+			);
+		}
+		&:nth-child(2) {
+			// background-color: green;
+			width: percent(
+				$calculatorPageBankCardThird,
+				$calculatorPageBankCardSecond + $calculatorPageBankCardThird + $calculatorPageBankCardFourth
+			);
+		}
+		&:nth-child(3) {
+			// background-color: blue;
+			width: percent(
+				$calculatorPageBankCardFourth,
+				$calculatorPageBankCardSecond + $calculatorPageBankCardThird + $calculatorPageBankCardFourth
+			);
+		}
+	}
+	// .results-calculator-page__results-list
+	&__results-list {
+		margin-top: -1px;
+	}
+}
+.column-name-results-calculator-page {
+	font-size: rem(15);
+	line-height: percent(18, 15);
+	color: $color_gray;
+}
+.calculator-page-results-list {
+	// .calculator-page-results-list__item
+	&__item {
+	}
+}
+.calculator-page-banks-cards {
+	transition: box-shadow 0.3s ease 0s;
+	&:not(:first-child) {
+		margin-top: rem(10);
+	}
+	&:not(:last-child) {
+		margin-bottom: rem(10);
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.0916);
+		}
+	}
+	// .calculator-page-banks-cards__main-card-block
+	&__main-card-block {
+	}
+	// .calculator-page-banks-cards__sub-card-block
+	&__sub-card-block {
+		border: 1px solid $color_light_blue;
+	}
+}
+.calculator-page-bank-card {
+	// padding: rem($calculatorPageBankCardMainInfoPadding);
+
+	background: $color_white;
+	border: 1px solid $color_light_blue;
+
+	.calculator-page-banks-cards__sub-card-block & {
+		border: none;
+	}
+
+	// .calculator-page-bank-card__main-info-block
+	&__main-info-block {
+		padding: rem($calculatorPageBankCardMainInfoPadding);
+	}
+	// .calculator-page-bank-card__full-info-block
+	&__full-info-block {
+	}
+}
+.calculator-page-bank-card-main-info-block {
+	// .calculator-page-bank-card-main-info-block__data
+	&__data {
+		margin-bottom: rem(15);
+	}
+	// .calculator-page-bank-card-main-info-block__controls
+	&__controls {
+		display: flex;
+		justify-content: space-between;
+
+		.calculator-page-banks-cards__sub-card-block & {
+			justify-content: flex-end;
+		}
+	}
+}
+.data-calculator-page-bank-card-main-info-block {
+	@media (min-width: #{em($calculatorPageBankCardMobileScreenWidth)}) {
+		//>880px
+		display: flex;
+		align-items: stretch;
+	}
+	@media (max-width: #{em($calculatorPageBankCardMobileScreenWidth)}) {
+		//<880px
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: rem(20);
+	}
+
+	// .data-calculator-page-bank-card-main-info-block__item
+	&__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: rem(60);
+		// .data-calculator-page-bank-card-main-info-block__item_logo
+		&_logo {
+			position: relative;
+			@media (min-width: #{em($calculatorPageBankCardMobileScreenWidth)}) {
+				//>880px
+				flex: 1 0 rem($calculatorPageBankCardFirst);
+			}
+			img {
+				position: absolute;
+
+				width: rem(120);
+				height: 100%;
+				top: 0;
+				left: 0;
+				@media (mac-width: #{em($calculatorPageBankCardMobileScreenWidth)}) {
+					//<880px
+					width: 100%;
+					max-width: rem(120);
+				}
+			}
+		}
+		// .data-calculator-page-bank-card-main-info-block__item_tariffs-name
+		&_tariffs-name {
+			@media (min-width: #{em($calculatorPageBankCardMobileScreenWidth)}) {
+				//>880px
+				width: percent(
+					$calculatorPageBankCardSecond,
+					$calculatorPageContainerWidth - 30 - $calculatorPageBankCardMainInfoPadding * 2
+				);
+			}
+		}
+		// .data-calculator-page-bank-card-main-info-block__item_opening-cost
+		&_opening-cost {
+			@media (min-width: #{em($calculatorPageBankCardMobileScreenWidth)}) {
+				//>880px
+				width: percent(
+					$calculatorPageBankCardThird,
+					$calculatorPageContainerWidth - 30 - $calculatorPageBankCardMainInfoPadding * 2
+				);
+			}
+		}
+		// .data-calculator-page-bank-card-main-info-block__item_maintenance-cost
+		&_maintenance-cost {
+			@media (min-width: #{em($calculatorPageBankCardMobileScreenWidth)}) {
+				//>880px
+				width: percent(
+					$calculatorPageBankCardFourth,
+					$calculatorPageContainerWidth - 30 - $calculatorPageBankCardMainInfoPadding * 2
+				);
+			}
+		}
+		// .data-calculator-page-bank-card-main-info-block__item_button
+		&_button {
+			grid-area: 3 / 1 / 4 / 3;
+			@media (min-width: #{em($calculatorPageBankCardMobileScreenWidth)}) {
+				//>880px
+				flex: 1 0 rem($calculatorPageBankCardLast);
+			}
+			display: flex;
+			.btn {
+				padding: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: 500;
+				width: 100%;
+				height: rem(50);
+				font-size: rem(14);
+				line-height: percent(17, 14);
+
+				.calculator-page-banks-cards__sub-card-block & {
+					color: $color_accent_blue;
+					border: 1px solid $color_accent_blue;
+					background-color: $color_white;
+					@media (any-hover: hover) {
+						&:hover {
+							color: $color_white;
+							background-color: $color_accent_blue;
+						}
+					}
+				}
+			}
+		}
+	}
+	// .data-calculator-page-bank-card-main-info-block__item-name
+	&__item-name {
+		display: none;
+		margin-bottom: rem(5);
+		@media (max-width: #{em($calculatorPageBankCardMobileScreenWidth)}) {
+			//<880px
+			display: flex;
+		}
+	}
+	// .data-calculator-page-bank-card-main-info-block__item-value
+	&__item-value {
+		font-weight: 500;
+		font-size: rem(14);
+		line-height: percent(17, 14);
+	}
+}
+.controls-calculator-page-bank-card-main-info-block {
+	// .controls-calculator-page-bank-card-main-info-block__item
+	&__item {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		column-gap: rem(6);
+		color: $color_accent_blue;
+		font-size: rem(14);
+		line-height: percent(17, 14);
+		cursor: pointer;
+		&::before {
+			margin-top: rem(2);
+		}
+		&:first-child {
+			.calculator-page-banks-cards__sub-card-block & {
+				display: none;
+			}
+		}
+		&::before {
+			transition: all 0.5s ease 0s;
+		}
+		// .controls-calculator-page-bank-card-main-info-block__item_toggle-other-tariffs
+		&_toggle-other-tariffs {
+			&_active {
+				&::before {
+					transform: rotate(-180deg);
+				}
+			}
+		}
+		// .controls-calculator-page-bank-card-main-info-block__item_toggle-full-info
+		&_toggle-full-info {
+			&_active {
+				&::before {
+					transform: rotate(-180deg);
+				}
+			}
+		}
+	}
+}
+.full-info-block-calculator-page-bank-card {
+	padding: rem(25) rem(20);
+	border-top: 1px solid $color_light_blue;
+
+	// .full-info-block-calculator-page-bank-card__tabs
+	&__tabs {
+		.tabs__navigation {
+			justify-content: flex-start;
+			margin-bottom: rem(15);
+			column-gap: rem(25);
+		}
+		.tabs__title {
+			font-weight: 500;
+			font-size: rem(15);
+			line-height: percent(19, 15);
+			margin-right: 0;
+			@media (any-hover: hover) {
+				&:hover {
+					color: $color_black;
+				}
+			}
+		}
+		.tabs__title._tab-active {
+			color: $color_black;
+		}
+		.tabs__item {
+			font-size: rem(15);
+			line-height: 160%;
+		}
+	}
+}
+
+// ================================================================================================================================================

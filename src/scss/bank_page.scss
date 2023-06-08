@@ -1,0 +1,419 @@
+.bank-page {
+	// .bank-page__bank-info
+	&__bank-info {
+		@include adaptiveValue("margin-top", 165, 130);
+	}
+
+	//====================================================================================================
+	// TARIFF CARDS
+	// .bank-page__tariff-cards
+	&__tariff-cards {
+		@include adaptiveValue("margin-top", 165, 120);
+	}
+	//====================================================================================================
+	// calculator-promo
+	// .bank-page__calculator-promo
+	&__calculator-promo {
+		@include adaptiveValue("margin-top", 105, 172);
+	}
+
+	//====================================================================================================
+	// ADVANTAGES CARDS
+	// .bank-page__advantages-cards
+	&__advantages-cards {
+		@include adaptiveValue("margin-top", 100, 135);
+	}
+
+	//====================================================================================================
+	// TARIFFS TABLE
+	// .bank-page__tariffs-table
+	&__tariffs-table {
+		@include adaptiveValue("margin-top", 95, 150);
+	}
+
+	//====================================================================================================
+	// FORM
+	// bank-page__registration-form
+	&__registration-form {
+		@include adaptiveValue("margin-top", 215, 80);
+	}
+
+	//====================================================================================================
+	// BONUSES
+	// bank-page__bonuses
+	&__bonuses {
+		@include adaptiveValue("margin-top", 160, 120);
+	}
+}
+
+//====================================================================================================
+// BANK INFO
+// ===================================================================================================
+.bank-info {
+	// .bank-info__container
+	&__container {
+		display: flex;
+		@include adaptiveValue("column-gap", 95, 0);
+		@include adaptiveValue("padding-left", 95, 15);
+		@include adaptiveValue("padding-right", 95, 15);
+		@media (max-width: em(670)) {
+			//<670px
+			flex-direction: column;
+			row-gap: rem(35);
+		}
+	}
+	// .bank-info__logo-block
+	&__logo-block {
+		text-align: center;
+		@media (max-width: em(670)) {
+			//<670px
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	// .bank-info__image
+	&__image {
+		width: rem(190);
+		height: rem(190);
+		position: relative;
+		border-radius: 50%;
+		overflow: hidden;
+		margin-bottom: rem(20);
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			object-position: center center;
+		}
+	}
+	// .bank-info__title
+	&__title {
+	}
+	// .bank-info__content
+	&__content {
+		margin-top: rem(25);
+		@media (max-width: em(670)) {
+			//<670px
+			margin-top: rem(0);
+		}
+	}
+}
+.content-bank-info {
+	// .content-bank-info__list
+	&__list {
+	}
+	// .content-bank-info__item
+	&__item {
+		margin-bottom: rem(25);
+	}
+	// .content-bank-info__title
+	&__title {
+		margin-bottom: rem(15);
+	}
+	// .content-bank-info__text-block
+	&__text-block {
+	}
+}
+.text-block-content-bank-info {
+	// .text-block-content-bank-info__text
+	&__text {
+		display: flex;
+		flex-direction: column;
+		font-size: rem(15);
+		line-height: 160%;
+		row-gap: rem(15);
+		p {
+		}
+	}
+	// text-block-content-bank-info__show-more-button
+	&__show-more-button {
+	}
+}
+
+//====================================================================================================
+// TARIFF CARDS
+// ===================================================================================================
+.tariff-cards {
+	// .tariff-cards__container
+	&__container {
+		position: relative;
+	}
+	// .tariff-cards__title
+	&__title {
+		text-align: center;
+		@include adaptiveValue("margin-bottom", 40, 30);
+	}
+	// .tariff-cards__body
+	&__body {
+		.splide__track {
+			padding: 15px 0;
+			margin: -15px;
+		}
+		.splide__pagination {
+			bottom: -1rem;
+		}
+	}
+	// .tariff-cards__slide
+	&__slide {
+	}
+	// .tariff-cards__card
+	&__card {
+	}
+	// .tariff-cards__background
+	&__background {
+		z-index: -1;
+		position: absolute;
+		width: 100%;
+		height: 73%;
+		top: -10%;
+		left: 0;
+		background-color: $color_light_blue;
+	}
+}
+.card-tariff {
+	padding: 10%;
+	background: $color_white;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+	border-radius: 4px;
+	@media (min-width: $mobileSmall) {
+		//>479.98px
+		@include adaptiveValue("min-width", 350, 315);
+	}
+	@media (max-width: $mobileSmall) {
+		width: calc(100vw - 30px);
+		//<479.98px
+	}
+	// .card-tariff__title-block
+	&__title-block {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(10);
+		margin-bottom: rem(35);
+	}
+	// .card-tariff__title
+	&__title {
+	}
+	// .card-tariff__link
+	&__link {
+		font-weight: 600;
+		@include adaptiveValue("font-size", 24, 20);
+		line-height: percent(29, 24);
+		color: $color_accent_blue;
+	}
+	// .card-tariff__description
+	&__description {
+		font-size: rem(15);
+		line-height: 140%;
+	}
+	// .card-tariff__list
+	&__list {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("row-gap", 25, 20);
+	}
+	// .card-tariff__item
+	&__item {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(6);
+	}
+	// .card-tariff__cost
+	&__cost {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 20, 18);
+		line-height: percent(24, 20);
+	}
+	// .card-tariff__label
+	&__label {
+		font-size: rem(14);
+		line-height: 160%;
+		color: $color_gray;
+	}
+	// .card-tariff__button
+	&__button {
+		width: 100%;
+		text-align: center;
+		@include adaptiveValue("margin-top", 35, 25);
+	}
+}
+//====================================================================================================
+// calculator-promo
+// ===================================================================================================
+
+//====================================================================================================
+// ADVANTAGES CARDS
+// ===================================================================================================
+.bank-advantages-cards {
+	// .bank-advantages-cards__container
+	&__container {
+	}
+	// .bank-advantages-cards__title
+	&__title {
+		text-align: center;
+		@include adaptiveValue("margin-bottom", 70, 40);
+	}
+	// .bank-advantages-cards__body
+	&__body {
+		.splide__list {
+			@media (min-width: $tablet) {
+				//>992px
+				display: grid !important;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: auto;
+				gap: rem(30);
+				@include adaptiveValue("gap", 30, 0);
+			}
+		}
+		.splide__pagination {
+			bottom: -2rem;
+		}
+	}
+	// .bank-advantages-cards__slide
+	&__slide {
+		@media (max-width: $tablet) {
+			//<992px
+			@include adaptiveValue("width", 540, 347);
+		}
+		@media (max-width: $mobileSmall) {
+			//<479.98px
+			width: calc(100vw - 30px);
+		}
+	}
+}
+.bank-advantages-card {
+	display: flex;
+	flex-direction: column;
+	background: $color_white;
+	border: 1px solid $color_light_blue;
+	border-radius: 4px;
+
+	@include adaptiveValue("padding-top", 40, 30);
+	@include adaptiveValue("padding-right", 40, 20);
+	@include adaptiveValue("padding-bottom", 40, 30);
+	@include adaptiveValue("padding-left", 40, 20);
+	@media (min-width: $tablet) {
+		//>992px
+		height: 100%;
+	}
+
+	// .bank-advantages-card__header
+	&__header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		@include adaptiveValue("margin-bottom", 0, 30);
+	}
+	// .bank-advantages-card__title
+	&__title {
+		padding-right: rem(25);
+		@include adaptiveValue("padding-right", 25, 15);
+	}
+	// .bank-advantages-card__image
+	&__image {
+		img {
+			@include adaptiveValue("width", 82, 56);
+			@include adaptiveValue("height", 82, 56);
+			@include adaptiveValue("flex-shrink", 82, 56);
+		}
+	}
+	// .bank-advantages-card__text
+	&__text {
+		font-size: rem(15);
+		@include adaptiveValue("line-height", 31, 25);
+		@include adaptiveValue("padding-right", 100, 20);
+	}
+}
+
+//====================================================================================================
+// TARIFFS TABLE
+// ===================================================================================================
+.bank-tariffs-table {
+	// .bank-tariffs-table__container
+	&__container {
+	}
+	// .bank-tariffs-table__title
+	&__title {
+		text-align: center;
+		@include adaptiveValue("margin-bottom", 50, 40);
+	}
+	// .bank-tariffs-table__tabs
+	&__tabs {
+	}
+	// .bank-tariffs-table__table-block
+	&__table-block {
+	}
+}
+
+.bank-tariffs-table-block {
+	display: flex;
+	border-radius: 4px;
+	overflow: hidden;
+	// .bank-tariffs-table-block__list
+	&__list {
+		// .bank-tariffs-table-block__list_descriptions
+		&_descriptions {
+			.bank-tariffs-table-block__item {
+				display: flex;
+				justify-content: flex-start;
+				width: rem(200);
+				@media (max-width: $mobileSmall) {
+					//<479.98px
+					width: calc(50vw - 15px);
+				}
+			}
+			// width: 200px;
+		}
+	}
+	// .bank-tariffs-table-block__item
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		// flex: 1 1 auto;
+
+		// width: 160px;
+
+		font-weight: 400;
+		font-size: rem(14);
+		line-height: percent(17, 14);
+		// border: 1px solid;
+		padding: rem(18) rem(7);
+		&:nth-child(odd) {
+			background-color: $color_light_blue;
+		}
+		&:first-child {
+			background-color: $color_accent_blue;
+			color: $color_white;
+			font-weight: 600;
+			font-size: rem(16);
+			line-height: 209%;
+			// text-align: center;
+			padding: rem(10) 0;
+		}
+	}
+	// .bank-tariffs-table-block__slider
+	&__slider {
+		min-width: 0;
+		width: 100%;
+		// background-color: green;
+		padding-bottom: rem(15);
+		// background-color: green;
+		.splide__pagination {
+			// background-color: red;
+			bottom: 0; //2
+		}
+	}
+}
+
+//====================================================================================================
+// TARIFFS TABLE
+// ===================================================================================================
+
+//====================================================================================================
+// FORM
+// ===================================================================================================

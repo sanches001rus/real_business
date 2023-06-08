@@ -1,0 +1,18 @@
+[data-showmore] {
+}
+[data-showmore-content] {
+}
+[data-showmore-button] {
+	margin-top: rem(5);
+	span {
+		&:last-child {
+			display: none;
+		}
+		._showmore-active & {
+			display: none;
+			&:last-child {
+				display: block;
+			}
+		}
+	}
+}

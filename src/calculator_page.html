@@ -1,0 +1,190 @@
+{% extends 'layout.html' %}
+{% set title = "Калькулятор" %}
+{% import "popup.html" as popup %}
+{% import "calculator_res_all_bank_cards.html" as card %}
+
+
+{% block page %}
+
+<main class="calculator-page">
+
+	<section class="calculator-page__filter filter-calculator">
+		<div class="filter-calculator__container">
+
+			<form action="" class="filter-calculator__form">
+				<div class="filter-calculator__mode-choice mode-choice-filter-calculator">
+					<div class="mode-choice-filter-calculator__title">
+						<h3 class="h3">Выберите организационно-правовую форму</h3>
+					</div>
+					<div class="mode-choice-filter-calculator__options mode-choice-options">
+
+						<div class="mode-choice-options__item">
+							<input id="choice_opf_ip" class="mode-choice-options__input" checked type="radio" value="1"
+								name="choice_opf">
+							<label for="choice_opf_ip" class="mode-choice-options__label">
+								ИП
+							</label>
+						</div>
+						<div class="mode-choice-options__item">
+							<input id="choice_opf_ooo" class="mode-choice-options__input" type="radio" value="2"
+								name="choice_opf">
+							<label for="choice_opf_ooo" class="mode-choice-options__label">
+								ООО
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="filter-calculator__inputs-block">
+
+					<div class="filter-calculator__input-item input-item-filter-calculator">
+						<label for="quantity_pays" class="input-item-filter-calculator__label">Количество
+							платежей</label>
+						<input id="quantity_pays" class="input-item-filter-calculator__input" placeholder="" value=""
+							type="text" name="quantity_pays" autocomplete="off">
+						<div id="quantity_pays_slider" class="input-item-filter-calculator__range-slider"></div>
+						<div class="input-item-filter-calculator__pips">
+							<span>0</span>
+							<span>10 млн</span>
+						</div>
+					</div>
+
+
+					<div class="filter-calculator__input-item input-item-filter-calculator">
+						<label for="transfer_fl_other" class="input-item-filter-calculator__label">Перевод на счет ф/л в
+							другом банке</label>
+						<input id="transfer_fl_other" class="input-item-filter-calculator__input" placeholder="" value="0"
+							type="text" name="transfer_fl_other" autocomplete="off">
+						<div id="transfer_fl_other_slider" class="input-item-filter-calculator__range-slider"></div>
+						<div class="input-item-filter-calculator__pips">
+							<span>0</span>
+							<span>10 млн</span>
+						</div>
+					</div>
+
+
+					<div class="filter-calculator__input-item input-item-filter-calculator">
+						<label for="transfer_fl_own" class="input-item-filter-calculator__label">Перевод на свой счет
+							ф/л</label>
+						<input id="transfer_fl_own" class="input-item-filter-calculator__input" placeholder="" value="0"
+							type="text" name="transfer_fl_own" autocomplete="off">
+						<div id="transfer_fl_own_slider" class="input-item-filter-calculator__range-slider"></div>
+						<div class="input-item-filter-calculator__pips">
+							<span>0</span>
+							<span>10 млн</span>
+						</div>
+					</div>
+
+					<div class="filter-calculator__input-item input-item-filter-calculator">
+						<label for="depositing_to_account" class="input-item-filter-calculator__label">Перевод на свой
+							счет
+							ф/л</label>
+						<input id="depositing_to_account" class="input-item-filter-calculator__input" placeholder="" value="0"
+							type="text" name="depositing_to_account" autocomplete="off">
+						<div id="depositing_to_account_slider" class="input-item-filter-calculator__range-slider"></div>
+						<div class="input-item-filter-calculator__pips">
+							<span>0</span>
+							<span>10 млн</span>
+						</div>
+					</div>
+
+				</div>
+
+				<div data-spollers class="filter-calculator__additional additional-filter-calculator spollers">
+					<details data-open="open" class="spoller__item">
+						<summary class="spollers__title">
+							<h4 class="h4">Дополнительные услуги</h4>
+						</summary>
+						<ul class="spollers__body additional-filter-calculator__list">
+
+							<li class="additional-filter-calculator__item">
+								<input checked id="free_opening_account"
+									class="additional-filter-calculator__checkbox checkbox__input checkbox__input_big"
+									type="checkbox" name="free_opening_account">
+								<label for="free_opening_account" class="additional-filter-calculator__label checkbox__label">
+									Бесплатное открытие счета
+								</label>
+							</li>
+
+							<li class="additional-filter-calculator__item">
+								<input checked id="free_period"
+									class="additional-filter-calculator__checkbox checkbox__input checkbox__input_big"
+									type="checkbox" name="free_period">
+								<label for="free_period" class="additional-filter-calculator__label checkbox__label">
+									Льготный период обслуживания
+								</label>
+							</li>
+
+							<li class="additional-filter-calculator__item">
+								<input checked id="free_mobile_bank"
+									class="additional-filter-calculator__checkbox checkbox__input checkbox__input_big"
+									type="checkbox" name="free_mobile_bank">
+								<label for="free_mobile_bank" class="additional-filter-calculator__label checkbox__label">
+									Бесплатный мобильный банк
+								</label>
+							</li>
+
+							<li class="additional-filter-calculator__item">
+								<input id="manager"
+									class="additional-filter-calculator__checkbox checkbox__input checkbox__input_big"
+									type="checkbox" name="manager">
+								<label for="manager" class="additional-filter-calculator__label checkbox__label">
+									Выездной менеджер
+								</label>
+							</li>
+
+							<li class="additional-filter-calculator__item">
+								<input id="free_accounting"
+									class="additional-filter-calculator__checkbox checkbox__input checkbox__input_big"
+									type="checkbox" name="free_accounting">
+								<label for="free_accounting" class="additional-filter-calculator__label checkbox__label">
+									Бесплатная бухгалтерия
+								</label>
+							</li>
+
+							<li class="additional-filter-calculator__item">
+								<input id="percents"
+									class="additional-filter-calculator__checkbox checkbox__input checkbox__input_big"
+									type="checkbox" name="percents">
+								<label for="percents" class="additional-filter-calculator__label checkbox__label">
+									Проценты на остаток по счету
+								</label>
+							</li>
+						</ul>
+
+					</details>
+				</div>
+			</form>
+
+		</div>
+	</section>
+	{{ popup.popup() }}
+
+	<section class="calculator-page__results results-calculator-page">
+		<div class="results-calculator-page__container">
+
+			<div class="results-calculator-page__header">
+				<div class="results-calculator-page__column-name column-name-results-calculator-page">Тариф</div>
+				<div class="results-calculator-page__column-name column-name-results-calculator-page">Открытие счета
+				</div>
+				<div class="results-calculator-page__column-name column-name-results-calculator-page">Обслуживание
+				</div>
+			</div>
+
+			<div data-iso-items class="results-calculator-page__results-list calculator-page-results-list">
+
+				{{ card.card(quantity=800, logo='otkritie.svg') }}
+				{{ card.card(quantity=2900, logo='sber_2.svg') }}
+				{{ card.card(quantity=2700, logo='tinkoff_2.svg') }}
+				{{ card.card(quantity=1600, logo='tochka_2.svg') }}
+				{{ card.card(quantity=1500, logo='vtb.svg') }}
+
+
+			</div>
+
+		</div>
+	</section>
+
+</main>
+
+{% endblock %}
