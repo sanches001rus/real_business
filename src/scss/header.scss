@@ -104,6 +104,8 @@
 		@media (max-width: $mobile) {
 			//<768px
 			@include adaptiveValue("padding-top", 30, 20);
+			@include adaptiveValue("padding-left", 25, 0, 0, 768, 320);
+			@include adaptiveValue("padding-right", 25, 0, 0, 768, 320);
 		}
 	}
 	// .menu__list

@@ -5301,6 +5301,11 @@
                 target.style.paddingBottom = 0;
                 target.style.marginTop = 0;
                 target.style.marginBottom = 0;
+                document.dispatchEvent(new CustomEvent("slideUpStart", {
+                    detail: {
+                        target
+                    }
+                }));
                 window.setTimeout((() => {
                     target.hidden = !showmore ? true : false;
                     !showmore ? target.style.removeProperty("height") : null;
@@ -5340,6 +5345,11 @@
                 target.style.removeProperty("padding-bottom");
                 target.style.removeProperty("margin-top");
                 target.style.removeProperty("margin-bottom");
+                document.dispatchEvent(new CustomEvent("slideDownStart", {
+                    detail: {
+                        target
+                    }
+                }));
                 window.setTimeout((() => {
                     target.style.removeProperty("height");
                     target.style.removeProperty("overflow");
@@ -5535,7 +5545,7 @@
                 }));
             }
             function initTabs(tabsBlock) {
-                let tabsTitles = tabsBlock.querySelectorAll("[data-tabs-titles]>*");
+                let tabsTitles = tabsBlock.querySelectorAll(".tabs__title");
                 let tabsContent = tabsBlock.querySelectorAll("[data-tabs-body]>*");
                 const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
                 const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
@@ -5974,7 +5984,7 @@
         __webpack_require__(125);
         const inputMasks = document.querySelectorAll("input");
         if (inputMasks.length) {
-            var phoneInput = document.querySelectorAll("input[type=tel]");
+            var phoneInput = document.querySelectorAll(".tel");
             var maskOptions = {
                 regex: "\\+7 \\([0-9][0-9][0-9]\\) [0-9]{3}-[0-9]{2}-[0-9]{2}",
                 onBeforePaste: function(pastedValue) {
@@ -8954,6 +8964,35 @@
                     console.log(slider_bank_tariffs_table_slider.noDrag);
                 }));
             }
+            function calculator_splide_panel() {
+                function _slider_toggle(target, state) {
+                    if (!target.classList.contains("calculator-page-bank-card__full-info-block")) return;
+                    const splide_element = target.closest(".calculator-page-bank-card").querySelector(".full-info-block-calculator-page-bank-card__body.splide");
+                    let slider = new Splide(splide_element, {
+                        autoWidth: true,
+                        gap: "1.5625rem",
+                        speed: 800,
+                        arrows: false,
+                        pagination: false
+                    });
+                    slider.on("overflow", (function(isOverflow) {
+                        console.log("isOverflow " + isOverflow);
+                        slider.options = {
+                            drag: isOverflow
+                        };
+                    }));
+                    if (state) slider.mount(); else slider.destroy();
+                }
+                document.addEventListener("slideDownStart", (function(e) {
+                    const target = e.detail.target;
+                    _slider_toggle(target, true);
+                }));
+                document.addEventListener("slideUpStart", (function(e) {
+                    const target = e.detail.target;
+                    _slider_toggle(target, false);
+                }));
+            }
+            calculator_splide_panel();
         }
         window.addEventListener("load", (function(e) {
             initSliders();

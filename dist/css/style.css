@@ -668,11 +668,6 @@ body {
   position: absolute;
 }
 
-.noUi-touch-area {
-  height: 100%;
-  width: 100%;
-}
-
 .noUi-state-tap .noUi-connect,
 .noUi-state-tap .noUi-origin {
   -webkit-transition: -webkit-transform 0.3s;
@@ -695,10 +690,10 @@ body {
 }
 
 .noUi-horizontal .noUi-handle {
-  width: 1.125rem;
-  height: 1.125rem;
-  right: -0.5625rem;
-  top: -0.3125rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  right: -1.25rem;
+  top: -0.875rem;
 }
 
 .noUi-vertical {
@@ -742,19 +737,12 @@ body {
 }
 
 .noUi-handle {
-  border-radius: 50%;
-  background: #2867f3;
   cursor: pointer;
   -webkit-transition: -webkit-box-shadow 0.3s ease 0s;
   transition: -webkit-box-shadow 0.3s ease 0s;
   -o-transition: box-shadow 0.3s ease 0s;
   transition: box-shadow 0.3s ease 0s;
   transition: box-shadow 0.3s ease 0s, -webkit-box-shadow 0.3s ease 0s;
-}
-
-.noUi-active {
-  -webkit-box-shadow: 0px 0px 8px 1px rgba(40, 103, 243, 0.3);
-          box-shadow: 0px 0px 8px 1px rgba(40, 103, 243, 0.3);
 }
 
 /* Handle stripes;
@@ -767,6 +755,18 @@ body {
 }
 
 .noUi-handle:before {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #2867f3;
+  border-radius: 50%;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+      -ms-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+
+.noUi-handle:after {
   width: 0.5rem;
   height: 0.5rem;
   background-color: #ffffff;
@@ -1086,8 +1086,8 @@ body::after {
 }
 
 .h1 {
-  font-size: 1.125rem;
   line-height: 209%;
+  font-weight: 600;
 }
 
 .h2 {
@@ -1164,6 +1164,7 @@ body::after {
   display: inline-block;
   line-height: 1.2142857143em;
   text-decoration-line: underline;
+  text-underline-offset: 0.1875rem;
   color: #919dab;
   font-weight: normal;
   padding: 0.3125rem 0px;
@@ -1546,6 +1547,7 @@ body::after {
 }
 
 .tabs__navigation {
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1563,7 +1565,6 @@ body::after {
   line-height: 122.2222222222%;
   color: #919dab;
   margin-bottom: 0.3125rem;
-  border-bottom: 2px solid transparent;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -1577,7 +1578,10 @@ body::after {
   font-weight: 500;
   line-height: 122.2222222222%;
   color: #2867f3;
-  border-bottom: 2px solid #2867f3;
+  text-decoration: underline;
+  text-decoration-color: #2867f3;
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.1875rem;
 }
 
 .wrapper {
@@ -2071,7 +2075,7 @@ body::after {
 }
 
 .bonuses__slider .splide__pagination {
-  bottom: -0.65rem;
+  bottom: -0.75rem;
 }
 
 .bonuses__link {
@@ -2419,6 +2423,16 @@ body::after {
 
 .faq-registration-ip-page__title {
   text-align: center;
+}
+
+.faq-registration-ip-page__spollers .spollers__title span {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 0.375rem;
+  text-decoration-color: #919dab;
+  text-decoration-thickness: 1px;
+  line-height: 160%;
+  border: 0px;
 }
 
 .bank-info__container {
@@ -4767,6 +4781,10 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 @media (min-width: 71.25em) {
+  .h1 {
+    font-size: 1.75rem;
+  }
+
   .h2 {
     font-size: 2rem;
   }
@@ -5404,6 +5422,10 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 @media (max-width: 20em) {
+  .h1 {
+    font-size: 1.625rem;
+  }
+
   .h2 {
     font-size: 1.625rem;
   }
@@ -6129,6 +6151,14 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     padding-top: 1.25rem;
   }
 
+  .menu__body {
+    padding-left: 0.0000000625rem;
+  }
+
+  .menu__body {
+    padding-right: 0.0000000625rem;
+  }
+
   .media-calculator-presentation {
     padding: 1.25rem;
   }
@@ -6239,6 +6269,18 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 @media (min-width: 20em) and (max-width: 71.25em) {
+@supports (font-size: clamp( 1.625rem , 1.5762195122rem  +  0.243902439vw , 1.75rem )) {
+    .h1 {
+      font-size: clamp( 1.625rem , 1.5762195122rem  +  0.243902439vw , 1.75rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.625rem , 1.5762195122rem  +  0.243902439vw , 1.75rem )) {
+    .h1 {
+      font-size: calc(1.625rem + 0.125 * (100vw - 20rem) / 51.25);
+    }
+}
+
 @supports (font-size: clamp( 1.625rem , 1.4786585366rem  +  0.7317073171vw , 2rem )) {
     .h2 {
       font-size: clamp( 1.625rem , 1.4786585366rem  +  0.7317073171vw , 2rem );
@@ -7661,6 +7703,14 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     padding-right: 5rem;
   }
 
+  .menu__body {
+    padding-left: 1.5625rem;
+  }
+
+  .menu__body {
+    padding-right: 1.5625rem;
+  }
+
   .media-calculator-presentation {
     padding: 6.25rem;
   }
@@ -7786,6 +7836,44 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 @supports not (padding-right: clamp( 1.5625rem , -0.2232142857rem  +  3.7202380952vw , 3.125rem )) {
     .menu__body {
       padding-right: calc(1.5625rem + 1.5625 * (100vw - 48rem) / 42);
+    }
+}
+}
+
+@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 48em) {
+@supports (padding-left: clamp( 0.0000000625rem , -1.1160713214rem  +  5.5803569196vw , 1.5625rem )) {
+    .menu__body {
+      padding-left: clamp( 0.0000000625rem , -1.1160713214rem  +  5.5803569196vw , 1.5625rem );
+    }
+}
+
+@supports not (padding-left: clamp( 0.0000000625rem , -1.1160713214rem  +  5.5803569196vw , 1.5625rem )) {
+    .menu__body {
+      padding-left: calc(0.0000000625rem + 1.5624999375 * (100vw - 20rem) / 28);
+    }
+}
+
+@supports (padding-right: clamp( 0.0000000625rem , -1.1160713214rem  +  5.5803569196vw , 1.5625rem )) {
+    .menu__body {
+      padding-right: clamp( 0.0000000625rem , -1.1160713214rem  +  5.5803569196vw , 1.5625rem );
+    }
+}
+
+@supports not (padding-right: clamp( 0.0000000625rem , -1.1160713214rem  +  5.5803569196vw , 1.5625rem )) {
+    .menu__body {
+      padding-right: calc(0.0000000625rem + 1.5624999375 * (100vw - 20rem) / 28);
+    }
+}
+
+@supports (padding: clamp( 1.25rem , -2.3214285714rem  +  17.8571428571vw , 6.25rem )) {
+    .media-calculator-presentation {
+      padding: clamp( 1.25rem , -2.3214285714rem  +  17.8571428571vw , 6.25rem );
+    }
+}
+
+@supports not (padding: clamp( 1.25rem , -2.3214285714rem  +  17.8571428571vw , 6.25rem )) {
+    .media-calculator-presentation {
+      padding: calc(1.25rem + 5 * (100vw - 20rem) / 28);
     }
 }
 }
@@ -7928,20 +8016,6 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   }
 }
 
-@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 48em) {
-@supports (padding: clamp( 1.25rem , -2.3214285714rem  +  17.8571428571vw , 6.25rem )) {
-    .media-calculator-presentation {
-      padding: clamp( 1.25rem , -2.3214285714rem  +  17.8571428571vw , 6.25rem );
-    }
-}
-
-@supports not (padding: clamp( 1.25rem , -2.3214285714rem  +  17.8571428571vw , 6.25rem )) {
-    .media-calculator-presentation {
-      padding: calc(1.25rem + 5 * (100vw - 20rem) / 28);
-    }
-}
-}
-
 @media (min-width: 61.99875em) and (min-width: 20em) and (max-width: 71.25em) {
 @supports (gap: clamp( 0.0000000625rem , -0.7317072302rem  +  3.6585364634vw , 1.875rem )) {
     .bank-advantages-cards__body .splide__list {
@@ -7997,7 +8071,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 @media (any-hover: hover) {
-  .noUi-handle:hover {
+  .noUi-handle:before:hover {
     -webkit-box-shadow: 0px 0px 8px 1px rgba(40, 103, 243, 0.2);
             box-shadow: 0px 0px 8px 1px rgba(40, 103, 243, 0.2);
   }

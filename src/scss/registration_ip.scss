@@ -316,6 +316,18 @@
 	}
 	// .faq-registration-ip-page__spollers
 	&__spollers {
+		.spollers__title {
+			span {
+				// background-color: red;
+				text-decoration: underline;
+				text-decoration-style: dashed;
+				text-underline-offset: rem(6);
+				text-decoration-color: $color_gray;
+				text-decoration-thickness: 1px;
+				line-height: 160%;
+				border: 0px;
+			}
+		}
 	}
 }
 

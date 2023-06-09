@@ -69,6 +69,15 @@ export let _slideUp = (target, duration = 500, showmore = 0) => {
 		target.style.paddingBottom = 0;
 		target.style.marginTop = 0;
 		target.style.marginBottom = 0;
+
+
+		document.dispatchEvent(new CustomEvent("slideUpStart", {
+			detail: {
+				target: target
+			}
+		}));
+
+
 		window.setTimeout(() => {
 			target.hidden = !showmore ? true : false;
 			!showmore ? target.style.removeProperty('height') : null;
@@ -109,6 +118,11 @@ export let _slideDown = (target, duration = 500, showmore = 0) => {
 		target.style.removeProperty('padding-bottom');
 		target.style.removeProperty('margin-top');
 		target.style.removeProperty('margin-bottom');
+		document.dispatchEvent(new CustomEvent("slideDownStart", {
+			detail: {
+				target: target
+			}
+		}));
 		window.setTimeout(() => {
 			target.style.removeProperty('height');
 			target.style.removeProperty('overflow');
@@ -342,7 +356,8 @@ export function tabs() {
 	}
 	// Робота з контентом
 	function initTabs(tabsBlock) {
-		let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-titles]>*');
+		// let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-titles]>*');
+		let tabsTitles = tabsBlock.querySelectorAll('.tabs__title');
 		let tabsContent = tabsBlock.querySelectorAll('[data-tabs-body]>*');
 		const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
 		const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;

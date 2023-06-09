@@ -1,7 +1,9 @@
 // Заголовки, общие БЕМ блоки и прочее...
 .h1 {
-	font-size: rem(18);
+	// font-size: rem(18);
 	line-height: 209%;
+	font-weight: 600;
+	@include adaptiveValue("font-size", 28, 26);
 }
 .h2 {
 	font-weight: 700;
@@ -80,6 +82,7 @@
 	display: inline-block;
 	line-height: em(17, 14);
 	text-decoration-line: underline;
+	text-underline-offset: rem(3);
 	color: $color_gray;
 	font-weight: normal;
 	padding: rem(5) 0px;
@@ -555,6 +558,7 @@
 .tabs {
 	// .tabs__navigation
 	&__navigation {
+		overflow: hidden;
 		display: flex;
 		justify-content: center;
 		margin-bottom: rem(25);
@@ -562,12 +566,13 @@
 	// .tabs__title
 	&__title {
 		display: flex;
+		// width: 100%;
 		font-weight: 500;
 		@include adaptiveValue("font-size", 18, 16);
 		line-height: percent(22, 18);
 		color: $color_gray;
 		margin-bottom: rem(5);
-		border-bottom: 2px solid transparent;
+		// border-bottom: 2px solid transparent;
 		transition: all 0.3s ease 0s;
 		// white-space: nowrap;
 		@media (any-hover: hover) {
@@ -583,7 +588,11 @@
 			@include adaptiveValue("font-size", 18, 16);
 			line-height: percent(22, 18);
 			color: $color_accent_blue;
-			border-bottom: 2px solid $color_accent_blue;
+			text-decoration: underline;
+			text-decoration-color: $color_accent_blue;
+			text-decoration-thickness: rem(2);
+			text-underline-offset: rem(3);
+			// border-bottom: 2px solid $color_accent_blue;
 		}
 	}
 	// .tabs__content

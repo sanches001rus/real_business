@@ -15,7 +15,7 @@ if (inputMasks.length) {
 	// const telmask = Inputmask({ regex: "\\+7 \\([8-9][0-9][0-9]\\) [0-9]{3}-[0-9]{2}-[0-9]{2}" }).mask(document.querySelectorAll("input[type=tel]"));
 
 
-	var phoneInput = document.querySelectorAll("input[type=tel]");
+	var phoneInput = document.querySelectorAll(".tel");
 	var maskOptions = {
 		// mask: '+7 (999) 999-99-99',
 		// regex: "\\+7 \\([8-9][0-9][0-9]\\) [0-9]{3}-[0-9]{2}-[0-9]{2}",

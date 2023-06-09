@@ -175,6 +175,57 @@ function initSliders() {
 		 } );
 	}
 
+	//////////////////////////////////////
+
+
+	function calculator_splide_panel() {
+
+		function _slider_toggle(target, state) {
+			if (!target.classList.contains('calculator-page-bank-card__full-info-block')) {
+				return
+			}
+			const splide_element = target.closest('.calculator-page-bank-card').querySelector('.full-info-block-calculator-page-bank-card__body.splide')
+			let slider = new Splide(splide_element, {
+				autoWidth: true,
+				// waitForTransition: false,
+				gap: '1.5625rem',
+				speed: 800,
+				arrows: false,
+				pagination: false
+			})
+
+			
+			slider.on( 'overflow', function ( isOverflow ) {
+				console.log('isOverflow ' + isOverflow);
+
+				slider.options = {
+					drag : isOverflow,
+				};
+			});			
+
+
+			if (state) {
+				slider.mount()
+			} else {
+				slider.destroy()
+			}
+		}
+		
+
+
+
+		document.addEventListener('slideDownStart',function(e) {
+			const target = e.detail.target			
+			_slider_toggle(target, true)	
+		})
+		document.addEventListener('slideUpStart',function(e) {
+			const target = e.detail.target	
+			_slider_toggle(target, false)		
+		})
+
+		
+	}
+	calculator_splide_panel()
 
 }
 
