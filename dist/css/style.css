@@ -1497,9 +1497,7 @@ body::after {
           flex-direction: column;
 }
 
-.form-block-registration__item input[type=text],
-.form-block-registration__item input[type=tel],
-.form-block-registration__item input[type=email] {
+.form-block-registration__item input {
   background: #ffffff;
   border-radius: 4px;
   height: 3.75rem;
