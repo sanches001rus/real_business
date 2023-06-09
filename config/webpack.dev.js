@@ -39,7 +39,7 @@ const htmlReplacements = htmlPages.map((file) => {
 		},
 		{
 			pattern: 'NEW_PROJECT_NAME', // Паттерн, который нужно заменить '@img', to: 'img'
-			replacement: rootFolder, // Заменяющий текст
+			replacement: '', // Заменяющий текст
 		},
 	];
 }).flat();

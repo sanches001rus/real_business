@@ -36,6 +36,8 @@ const devTasks = gulp.parallel(fonts, gitignore);
 // Основні завдання виконуватимемо паралельно після обробки шрифтів
 const buildTasks = gulp.series(fonts, jsDev, js, gulp.parallel(html, css, images, gitignore));
 
+const githubTasks = gulp.series(fonts, jsDev, js, gulp.parallel(html, css, images, gitignore));
+
 // Експорт завдань
 export { html }
 export { css }
