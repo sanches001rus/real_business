@@ -25,6 +25,8 @@ $calculatorPageContainerWidth: calc(920 + 30);
 	}
 	// .filter-calculator__form
 	&__form {
+		@include adaptiveValue("padding-left", 0, 10);
+		@include adaptiveValue("padding-right", 0, 10);
 	}
 	// .filter-calculator__mode-choice
 	&__mode-choice {
@@ -473,33 +475,6 @@ $calculatorPageBankCardMobileScreenWidth: 880;
 .full-info-block-calculator-page-bank-card {
 	padding: rem(25) rem(20);
 	border-top: 1px solid $color_light_blue;
-
-	// .full-info-block-calculator-page-bank-card__tabs
-	&__tabs {
-		.tabs__navigation {
-			justify-content: flex-start;
-			margin-bottom: rem(15);
-			column-gap: rem(25);
-		}
-		.tabs__title {
-			font-weight: 500;
-			font-size: rem(15);
-			line-height: percent(19, 15);
-			margin-right: 0;
-			@media (any-hover: hover) {
-				&:hover {
-					color: $color_black;
-				}
-			}
-		}
-		.tabs__title._tab-active {
-			color: $color_black;
-		}
-		.tabs__item {
-			font-size: rem(15);
-			line-height: 160%;
-		}
-	}
 }
 
 // ================================================================================================================================================

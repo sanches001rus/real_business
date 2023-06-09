@@ -555,21 +555,49 @@
 //====================================================================================================
 // TABS
 // ===================================================================================================
+
+// .full-info-block-calculator-page-bank-card__tabs
+// &__tabs {
+// 	.tabs__navigation {
+// 		justify-content: flex-start;
+// 		margin-bottom: rem(15);
+// 		column-gap: rem(25);
+// 	}
+// 	.tabs__title {
+// 		font-weight: 500;
+// 		font-size: rem(15);
+// 		line-height: percent(19, 15);
+// 		margin-right: 0;
+// 		@media (any-hover: hover) {
+// 			&:hover {
+// 				color: $color_black;
+// 			}
+// 		}
+// 	}
+// 	.tabs__title._tab-active {
+// 		color: $color_black;
+// 	}
+// 	.tabs__item {
+// 		font-size: rem(15);
+// 		line-height: 160%;
+// 	}
+// }
+
 .tabs {
 	// .tabs__navigation
 	&__navigation {
 		overflow: hidden;
-		display: flex;
-		justify-content: center;
-		margin-bottom: rem(25);
+		justify-content: flex-start;
+		margin-bottom: rem(15);
+		column-gap: rem(25);
 	}
 	// .tabs__title
 	&__title {
 		display: flex;
 		// width: 100%;
 		font-weight: 500;
-		@include adaptiveValue("font-size", 18, 16);
-		line-height: percent(22, 18);
+		font-size: rem(15);
+		line-height: percent(19, 15);
 		color: $color_gray;
 		margin-bottom: rem(5);
 		// border-bottom: 2px solid transparent;
@@ -583,10 +611,8 @@
 		&:not(:last-child) {
 			margin-right: rem(30);
 		}
+
 		&._tab-active {
-			font-weight: 500;
-			@include adaptiveValue("font-size", 18, 16);
-			line-height: percent(22, 18);
 			color: $color_accent_blue;
 			text-decoration: underline;
 			text-decoration-color: $color_accent_blue;

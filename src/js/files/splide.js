@@ -187,9 +187,15 @@ function initSliders() {
 			const splide_element = target.closest('.calculator-page-bank-card').querySelector('.full-info-block-calculator-page-bank-card__body.splide')
 			let slider = new Splide(splide_element, {
 				autoWidth: true,
+				drag: 'free',
+
+				rewind: false,
+				rewindByDrag: false,
 				// waitForTransition: false,
 				gap: '1.5625rem',
-				speed: 800,
+				// focus: 'center',
+				trimSpace: false,
+				// speed: 800,
 				arrows: false,
 				pagination: false
 			})
@@ -197,10 +203,13 @@ function initSliders() {
 			
 			slider.on( 'overflow', function ( isOverflow ) {
 				console.log('isOverflow ' + isOverflow);
+				if (!isOverflow) {
+					slider.options = {
+						drag : false,
+					};
+				}
 
-				slider.options = {
-					drag : isOverflow,
-				};
+				
 			});			
 
 

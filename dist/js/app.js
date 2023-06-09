@@ -8970,15 +8970,18 @@
                     const splide_element = target.closest(".calculator-page-bank-card").querySelector(".full-info-block-calculator-page-bank-card__body.splide");
                     let slider = new Splide(splide_element, {
                         autoWidth: true,
+                        drag: "free",
+                        rewind: false,
+                        rewindByDrag: false,
                         gap: "1.5625rem",
-                        speed: 800,
+                        trimSpace: false,
                         arrows: false,
                         pagination: false
                     });
                     slider.on("overflow", (function(isOverflow) {
                         console.log("isOverflow " + isOverflow);
-                        slider.options = {
-                            drag: isOverflow
+                        if (!isOverflow) slider.options = {
+                            drag: false
                         };
                     }));
                     if (state) slider.mount(); else slider.destroy();
