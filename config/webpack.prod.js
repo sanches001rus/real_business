@@ -52,30 +52,6 @@ const htmlReplacements = htmlPages.map((file) => {
 		// 	pattern: /href="\/(.*?)\.html"/g, // /g => replace all
 		// 	replacement: 'href="/real_business/$1.html"'
 		// },
-		{
-			pattern: /href="\/(.*?)\.html"/g, // /g => replace all
-			replacement: function ($1) {
-				const link = $1
-				const regex = /href="([^"]*)\.[^"]*"/;
-				const matches = regex.exec(link);
-
-				let address = ''
-				if (matches && matches.length > 1) {
-					address = matches[1];
-				}
-				const a = `href="`
-				const b = 'real_business'
-				const c = `${address}.html"`
-				// const full = `href="real_business${address}.html"`
-				const full = a + b + c
-				console.log(full);
-				return full
-			}
-		}
-
-
-
-
 	];
 }).flat();
 
