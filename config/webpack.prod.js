@@ -52,10 +52,10 @@ const htmlReplacements = htmlPages.map((file) => {
 		// 	pattern: /<p>(.+?)<\/p>/g, // /g => replace all
 		// 	replacement: '<div>$1</div>'
 		// },
-		// {
-		// 	pattern: /href="\/(.*?)\.html"/g, // /g => replace all
-		// 	replacement: `href="${repo}/$1.html"`
-		// }
+		{
+			pattern: /href="\/(.*?)\.html"/g, // /g => replace all
+			replacement: `href="\/${repo}/$1.html"`
+		}
 
 	];
 }).flat();
