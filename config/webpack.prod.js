@@ -12,6 +12,7 @@ import * as path from 'path';
 const srcFolder = "src";
 const builFolder = "dist";
 const rootFolder = path.basename(path.resolve());
+const repo = rootFolder //название репозитория github
 
 // let pugPages = fs.readdirSync(srcFolder).filter(fileName => fileName.endsWith('.pug'))
 // let htmlPages = [];
@@ -47,6 +48,15 @@ const htmlReplacements = htmlPages.map((file) => {
 			pattern: 'NEW_PROJECT_NAME', // Паттерн, который нужно заменить '@img', to: 'img'
 			replacement: rootFolder, // Заменяющий текст
 		},
+		// {
+		// 	pattern: /<p>(.+?)<\/p>/g, // /g => replace all
+		// 	replacement: '<div>$1</div>'
+		// },
+		{
+			pattern: /href="\/(.*?)\.html"/g, // /g => replace all
+			replacement: `href="${repo}/$1.html"`
+		}
+
 	];
 }).flat();
 
