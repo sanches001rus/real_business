@@ -605,7 +605,7 @@
 		// white-space: nowrap;
 		@media (any-hover: hover) {
 			&:hover {
-				color: $color_accent_blue;
+				color: $color_black;
 			}
 		}
 		&:not(:last-child) {
@@ -617,9 +617,14 @@
 			text-decoration: underline;
 			text-decoration-color: $color_accent_blue;
 			text-decoration-thickness: rem(2);
-			text-underline-offset: rem(3);
+			text-underline-offset: rem(4);
 			// border-bottom: 2px solid $color_accent_blue;
 		}
+	}
+	// .tabs__item
+	&__item {
+		font-size: rem(15);
+		line-height: 160%;
 	}
 	// .tabs__content
 	&__content {

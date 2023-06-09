@@ -1580,7 +1580,12 @@ body::after {
   text-decoration: underline;
   text-decoration-color: #2867f3;
   text-decoration-thickness: 0.125rem;
-  text-underline-offset: 0.1875rem;
+  text-underline-offset: 0.25rem;
+}
+
+.tabs__item {
+  font-size: 0.9375rem;
+  line-height: 160%;
 }
 
 .wrapper {
@@ -8058,7 +8063,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   }
 
   .tabs__title:hover {
-    color: #2867f3;
+    color: #000000;
   }
 
   .menu__link:hover::before {
