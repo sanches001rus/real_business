@@ -28,10 +28,6 @@ const htmlPlugins = htmlPages.map((file) => {
 // Создаем массив конфигураций для замен в HTML-файлах
 const htmlReplacements = htmlPages.map((file) => {
 	return [
-		// {
-		// 	pattern: '/app.min', // Паттерн, который нужно заменить '@img', to: 'img'
-		// 	replacement: 'js/app.min', // Заменяющий текст
-		// },
 		{
 			pattern: '/../css', // Паттерн, который нужно заменить '@img', to: 'img'
 			replacement: 'css', // Заменяющий текст
@@ -52,10 +48,33 @@ const htmlReplacements = htmlPages.map((file) => {
 		// 	pattern: /<p>(.+?)<\/p>/g, // /g => replace all
 		// 	replacement: '<div>$1</div>'
 		// },
+		// {
+		// 	pattern: /href="\/(.*?)\.html"/g, // /g => replace all
+		// 	replacement: 'href="/real_business/$1.html"'
+		// },
 		{
 			pattern: /href="\/(.*?)\.html"/g, // /g => replace all
-			replacement: `href="\/${repo}/$1.html"`
+			replacement: function ($1) {
+				const link = $1
+				const regex = /href="([^"]*)\.[^"]*"/;
+				const matches = regex.exec(link);
+
+				let address = ''
+				if (matches && matches.length > 1) {
+					address = matches[1];
+				}
+				const a = `href="`
+				const b = 'real_business'
+				const c = `${address}.html"`
+				// const full = `href="real_business${address}.html"`
+				const full = a + b + c
+				console.log(full);
+				return full
+			}
 		}
+
+
+
 
 	];
 }).flat();
