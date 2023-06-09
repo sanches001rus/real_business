@@ -1,6 +1,7 @@
 .page {
 	&__stages {
-		@include adaptiveValue("margin-top", 100, 100);
+		// @include adaptiveValue("margin-top", 100, 100);
+		margin-top: rem(100);
 	}
 	&__registration-form {
 		@include adaptiveValue("margin-top", 200, 90);

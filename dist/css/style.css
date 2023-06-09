@@ -1852,6 +1852,10 @@ body::after {
   line-height: 140%;
 }
 
+.page__stages {
+  margin-top: 6.25rem;
+}
+
 .main-banner {
   padding-top: 4.375rem;
 }
@@ -4857,10 +4861,6 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     margin-bottom: 3.75rem;
   }
 
-  .page__stages {
-    margin-top: 6.25rem;
-  }
-
   .page__registration-form {
     margin-top: 12.5rem;
   }
@@ -5490,10 +5490,6 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     margin-bottom: 2.5rem;
   }
 
-  .page__stages {
-    margin-top: 6.25rem;
-  }
-
   .page__registration-form {
     margin-top: 5.625rem;
   }
@@ -5902,25 +5898,11 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   }
 }
 
-@media (max-width: 47.99875em) and (max-width: 20em) {
+@media (max-width: 47.99875em) {
   .registration-form__form-block {
     padding-top: 3.75rem;
   }
 
-  .registration-form__form-block {
-    padding-bottom: 3.75rem;
-  }
-
-  .menu__body {
-    padding-top: 1.25rem;
-  }
-
-  .media-calculator-presentation {
-    padding: 1.25rem;
-  }
-}
-
-@media (max-width: 47.99875em) {
   .form-block-registration__list {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -6135,6 +6117,20 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
         -ms-flex-direction: column;
             flex-direction: column;
     row-gap: 2.1875rem;
+  }
+}
+
+@media (max-width: 47.99875em) and (max-width: 20em) {
+  .registration-form__form-block {
+    padding-bottom: 3.75rem;
+  }
+
+  .menu__body {
+    padding-top: 1.25rem;
+  }
+
+  .media-calculator-presentation {
+    padding: 1.25rem;
   }
 }
 
@@ -6496,18 +6492,6 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 @supports not (margin-bottom: clamp( 2.5rem , 2.012195122rem  +  2.4390243902vw , 3.75rem )) {
     .footer {
       margin-bottom: calc(2.5rem + 1.25 * (100vw - 20rem) / 51.25);
-    }
-}
-
-@supports (margin-top: clamp( 6.25rem , 6.25rem  +  0vw , 6.25rem )) {
-    .page__stages {
-      margin-top: clamp( 6.25rem , 6.25rem  +  0vw , 6.25rem );
-    }
-}
-
-@supports not (margin-top: clamp( 6.25rem , 6.25rem  +  0vw , 6.25rem )) {
-    .page__stages {
-      margin-top: calc(6.25rem + 0 * (100vw - 20rem) / 51.25);
     }
 }
 
@@ -7746,10 +7730,6 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 
 @media (max-width: 47.99875em) and (min-width: 71.25em) {
   .registration-form__form-block {
-    padding-top: 3.75rem;
-  }
-
-  .registration-form__form-block {
     padding-bottom: 4.0625rem;
   }
 
@@ -7759,18 +7739,6 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 @media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 71.25em) {
-@supports (padding-top: clamp( 3.75rem , 3.75rem  +  0vw , 3.75rem )) {
-    .registration-form__form-block {
-      padding-top: clamp( 3.75rem , 3.75rem  +  0vw , 3.75rem );
-    }
-}
-
-@supports not (padding-top: clamp( 3.75rem , 3.75rem  +  0vw , 3.75rem )) {
-    .registration-form__form-block {
-      padding-top: calc(3.75rem + 0 * (100vw - 20rem) / 51.25);
-    }
-}
-
 @supports (padding-bottom: clamp( 3.75rem , 3.6280487805rem  +  0.6097560976vw , 4.0625rem )) {
     .registration-form__form-block {
       padding-bottom: clamp( 3.75rem , 3.6280487805rem  +  0.6097560976vw , 4.0625rem );

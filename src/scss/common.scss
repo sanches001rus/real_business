@@ -448,7 +448,8 @@
 		@include adaptiveValue("padding-left", 45, 15);
 		@media (max-width: $mobile) {
 			//<768px
-			@include adaptiveValue("padding-top", 60, 60);
+			// @include adaptiveValue("padding-top", 60, 60);
+			padding-top: rem(60);
 			@include adaptiveValue("padding-bottom", 65, 60);
 		}
 	}
